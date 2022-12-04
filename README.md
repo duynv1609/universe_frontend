@@ -3,6 +3,7 @@
 ### Cach 1
 #### install dependencies
 ```
+npm install -g pnpm
 pnpm install --shamefully-hoist && pnpm prepare
 ```
 #### serve
