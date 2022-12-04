@@ -1,4 +1,4 @@
-[![Nuxt banner](./.github/assets/banner.png)](https://nuxt.com)
+[![Nuxt banner](https://github.com/nuxt/framework/blob/main/.github/assets/banner.png)](https://nuxt.com)
 
 # 👋 Welcome to Nuxt
 
