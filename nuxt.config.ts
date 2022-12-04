@@ -1,6 +1,7 @@
 import { IntlifyModuleOptions } from '@intlify/nuxt3'
 import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import vuetify from 'vite-plugin-vuetify'
 
 declare module '@nuxt/schema' {
   interface NuxtConfig {
@@ -21,6 +22,8 @@ export default defineNuxtConfig({
 
   // css
   css: [
+    '@mdi/font/css/materialdesignicons.css',
+    '~/assets/sass/vuetify.min.scss', // to remove important attribute
     'virtual:windi-base.css',
     'virtual:windi-components.css',
     'virtual:windi-utilities.css',
@@ -33,7 +36,7 @@ export default defineNuxtConfig({
 
   // build
   build: {
-    transpile: ['@headlessui/vue'],
+    transpile: ['@headlessui/vue', 'vuetify'],
   },
 
   // modules
@@ -45,6 +48,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/eslint-module',
     'nuxt-windicss',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        config.plugins?.push(vuetify())
+      })
+    },
   ],
 
   // experimental features

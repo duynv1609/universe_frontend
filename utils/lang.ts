@@ -80,3 +80,9 @@ export function LanguageManager() {
     init,
   }
 }
+
+export function getVuetifyLocale(appLocale: string): string {
+  const key = appLocale as keyof typeof availableLocales
+
+  return availableLocales[key].iso || availableLocales.en.iso
+}

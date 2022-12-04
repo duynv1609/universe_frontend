@@ -17,7 +17,7 @@
     "serve": "serve dist/",
     "postinstall": "husky install",
     "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
-    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
+    "lint:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
     "prepare": "husky install",
     "clean": "rm -rf .nuxt dist .output",
     "generate:locales": "node tools/translator.js ./locales en.yml"
@@ -64,7 +64,14 @@
   },
   "lint-staged": {
     "**/*.{js,ts,vue,html}": [
-      "pnpm lintfix"
+      "pnpm lint:fix"
     ]
+  },
+  "dependencies": {
+    "@mdi/font": "^7.0.96",
+    "axios": "^1.2.0",
+    "vee-validate": "^4.7.3",
+    "vite-plugin-vuetify": "^1.0.0",
+    "vuetify": "^3.0.3"
   }
 }

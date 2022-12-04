@@ -1,0 +1,10 @@
+FROM node:16.16.0-alpine
+WORKDIR /app
+RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
+RUN apk update && apk upgrade && apk --no-cache --virtual build-dependencies add \
+    python3 \
+    make \
+    g++
+COPY . .
+EXPOSE 3000
+ENTRYPOINT ["sh", "/app/entrypoint.sh"]
