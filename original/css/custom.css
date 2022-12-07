@@ -1,0 +1,42 @@
+.owl-carousel .owl-item img {
+    object-fit: cover;
+}
+
+.card__rating {
+    opacity: 1 !important;
+}
+
+.live__value {
+    left: auto;
+    text-align: center;
+    height: auto;
+    font-size: 13px;
+    bottom: 20px;
+    padding: 5px 10px;
+}
+
+.slider-radio input[type=radio]:checked + label {
+    width: 120px;
+}
+
+.home-title-custom {
+    margin: 0;
+    pointer-events: none;
+}
+
+.home-title-custom label {
+    font-size: 18px !important;
+    padding: 0 20px;
+}
+
+.footer__links small.ads {
+    color: #fff;
+}
+
+.custom-category {
+    padding: 60px 0 !important;
+}
+
+.live .live__cover svg {
+    opacity: 1;
+}
