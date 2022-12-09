@@ -7,17 +7,17 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
-const app = useAppConfig()
+// const app = useAppConfig()
 const menus = computed((): IMenuItem[] => [
   {
     type: 'link',
-    text: t('pages.getting-started.nav'),
-    route: { name: 'getting-started' },
+    text: t('pages.category.nav'),
+    route: { name: 'category' },
   },
-  { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
-  { type: 'link', text: t('pages.test.nav'), route: { name: 'test' } },
-  { type: 'link', text: t('pages.post.nav'), route: { name: 'post' } },
-  { type: 'link', text: t('pages.setting.nav'), route: { name: 'setting' } },
+  { type: 'link', text: t('pages.nation.nav'), route: { name: 'nation' } },
+  { type: 'link', text: t('pages.series.nav'), route: { name: 'series' } },
+  // { type: 'link', text: t('pages.post.nav'), route: { name: 'post' } },
+  { type: 'link', text: t('pages.movie.nav'), route: { name: 'movie' } },
   {
     type: 'button',
     text: t('pages.dashboard.nav'),
@@ -29,7 +29,7 @@ const menus = computed((): IMenuItem[] => [
 <template>
   <BuilderNavbar>
     <template #banner>
-      <div
+      <!-- <div
         class="text-white text-xs text-center py-1 px-4 lg:px-8 bg-primary-500 capitalize"
       >
         <span class="mr-1">
@@ -40,12 +40,12 @@ const menus = computed((): IMenuItem[] => [
             href="https://github.com/viandwi24/nuxt3-awesome-starter"
           />
         </span>
-      </div>
+      </div> -->
     </template>
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <nav
-          class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
+          class="text-sm leading-6 font-semibold text-grey-lighten-2"
           role="navigation"
         >
           <ul class="flex items-center space-x-8">
@@ -54,7 +54,7 @@ const menus = computed((): IMenuItem[] => [
                 v-if="item.type === 'link'"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
-                class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
+                class="hover:no-underline hover:text-light-blue-darken-2 uppercase"
                 >{{ item.text }}</Anchor
               >
               <Button
@@ -74,7 +74,7 @@ const menus = computed((): IMenuItem[] => [
           <LanguageSwitcher />
           <ThemeSwitcher />
           <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
+            class="hover:no-underline hover:text-light-blue-darken-2 hover:dark:text-white text-lg flex self-center items-center"
             href="https://github.com/viandwi24/nuxt3-awesome-starter"
             title="Github"
           >

@@ -11,11 +11,11 @@ definePageMeta({
   layout: 'page',
 })
 useHead(() => ({
-  title: capitalize(t('pages.test.title')),
+  title: capitalize(t('pages.series.title')),
   meta: [
     {
       name: 'description',
-      content: t('pages.test.description'),
+      content: t('pages.series.description'),
     },
   ],
 }))
@@ -27,11 +27,14 @@ const identity = useIdentity()
 <template>
   <PageWrapper>
     <PageHeader>
-      <PageTitle :text="$t('pages.test.title')" class="capitalize" />
+      <PageTitle :text="$t('pages.series.title')" class="capitalize" />
     </PageHeader>
     <PageBody>
       <PageSection>
-        <PageSectionTitle :text="$t('pages.test.counter')" class="capitalize" />
+        <PageSectionTitle
+          :text="$t('pages.series.counter')"
+          class="capitalize"
+        />
         <div class="">
           <div class="mb-2">Counter : {{ counter.count }}</div>
           <div
@@ -41,28 +44,28 @@ const identity = useIdentity()
               class="w-full md:w-auto capitalize"
               type="secondary"
               size="sm"
-              :text="$t('pages.test.increment')"
+              :text="$t('pages.series.increment')"
               @click.prevent="counter.increment"
             />
             <Button
               class="w-full md:w-auto"
               type="secondary"
               size="sm"
-              :text="`${$t('pages.test.increment')} 2x`"
+              :text="`${$t('pages.series.increment')} 2x`"
               @click.prevent="counter.increment2x"
             />
             <Button
               class="w-full md:w-auto capitalize"
               type="secondary"
               size="sm"
-              :text="$t('pages.test.decrement')"
+              :text="$t('pages.series.decrement')"
               @click.prevent="counter.decrement"
             />
             <Button
               class="w-full md:w-auto capitalize"
               type="secondary"
               size="sm"
-              :text="$t('pages.test.reset')"
+              :text="$t('pages.series.reset')"
               @click.prevent="counter.reset"
             />
           </div>
@@ -70,11 +73,11 @@ const identity = useIdentity()
       </PageSection>
       <PageSection>
         <PageSectionTitle
-          :text="$t('pages.test.identity')"
+          :text="$t('pages.series.identity')"
           class="capitalize"
         />
         <div class="mb-2">
-          <span class="capitalize">{{ $t('pages.test.full_name') }} : </span>
+          <span class="capitalize">{{ $t('pages.series.full_name') }} : </span>
           <span>{{ identity.fullName }}</span>
         </div>
         <div class="mb-2">
@@ -93,7 +96,7 @@ const identity = useIdentity()
             />
             <Button
               class="capitalize w-full md:w-auto"
-              :text="$t('pages.test.reset')"
+              :text="$t('pages.series.reset')"
               type="secondary"
               size="md"
               @click.prevent="identity.reset"

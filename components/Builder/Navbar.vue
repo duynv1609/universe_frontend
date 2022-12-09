@@ -49,12 +49,12 @@ const toggleOptions = (show?: boolean) => {
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 dark:border-gray-50/[0.2] bg-white/[0.5] dark:bg-slate-900/[0.5]"
+    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 bg-grey-darken-5 dark:border-gray-50/[0.2] dark:bg-slate-900/[0.5]"
   >
     <div id="navbar-banner" class="banner">
       <slot name="banner" />
     </div>
-    <div class="max-w-8xl w-full mx-auto">
+    <div class="max-w-7xl w-full py-5 mx-auto">
       <div class="py-3 lg:px-8 mx-4 lg:mx-0">
         <div class="relative flex items-center">
           <!-- drawer:toggle -->
@@ -80,14 +80,18 @@ const toggleOptions = (show?: boolean) => {
           <slot name="title">
             <NuxtLink
               tag="a"
-              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-gray-900 dark:text-gray-200"
+              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-light-blue-darken-2 dark:text-gray-200"
               :to="{ name: 'index' }"
             >
               <span class="sr-only">home</span>
               <span class="flex items-center">
-                <IconSimpleIcons:nuxtdotjs
+                <img
+                  src="~/assets/images/logo.svg"
                   class="inline-block mr-2 text-lg text-primary-500"
                 />
+                <!-- <IconLo:logo
+                  class="inline-block mr-2 text-lg text-primary-500"
+                /> -->
                 {{ app.name }}
               </span>
             </NuxtLink>

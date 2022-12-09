@@ -18,11 +18,11 @@ definePageMeta({
   layout: 'page',
 })
 useHead(() => ({
-  title: capitalize(t('pages.setting.title')),
+  title: capitalize(t('pages.movie.title')),
   meta: [
     {
       name: 'description',
-      content: t('pages.setting.description'),
+      content: t('pages.movie.description'),
     },
   ],
 }))
@@ -42,7 +42,7 @@ const username = ref('viandwi24')
 const id = ref(randomToken())
 const enableSpamProtection = ref(false)
 const enableDirList = ref(false)
-const enableAdvancedSetting = ref(false)
+const enableAdvancedmovie = ref(false)
 
 // methods
 const validate = async () => {
@@ -77,7 +77,7 @@ const validate = async () => {
       />
     </PageSection>
     <PageHeader>
-      <PageTitle :text="$t('pages.setting.title')" class="capitalize" />
+      <PageTitle :text="$t('pages.movie.title')" class="capitalize" />
     </PageHeader>
     <PageBody>
       <PageSection>
@@ -130,11 +130,11 @@ const validate = async () => {
                 <CardContent>
                   <CardTitle
                     class="capitalize"
-                    :text="$t('pages.setting.sections.validate_username.title')"
+                    :text="$t('pages.movie.sections.validate_username.title')"
                   />
                   <p class="mb-2">
                     {{
-                      $t('pages.setting.sections.validate_username.description')
+                      $t('pages.movie.sections.validate_username.description')
                     }}
                   </p>
                   <div class="flex">
@@ -149,13 +149,11 @@ const validate = async () => {
                   class="flex flex-col space-y-2 md:space-y md:flex-row items-center md:justify-between"
                 >
                   <p>
-                    {{ $t('pages.setting.sections.validate_username.footer') }}
+                    {{ $t('pages.movie.sections.validate_username.footer') }}
                     <Anchor
                       class="underline font-bold capitalize"
                       :text="
-                        $t(
-                          'pages.setting.sections.validate_username.footer_link'
-                        )
+                        $t('pages.movie.sections.validate_username.footer_link')
                       "
                       href="https://docs.github.com/en/rest/users/users#get-a-user"
                     />
@@ -165,9 +163,7 @@ const validate = async () => {
                     size="sm"
                     type="opposite"
                     :text="
-                      $t(
-                        'pages.setting.sections.validate_username.footer_button'
-                      )
+                      $t('pages.movie.sections.validate_username.footer_button')
                     "
                     @click="validate"
                   />
@@ -177,10 +173,10 @@ const validate = async () => {
                 <CardContent>
                   <CardTitle
                     class="capitalize"
-                    :text="$t('pages.setting.sections.bot_id.title')"
+                    :text="$t('pages.movie.sections.bot_id.title')"
                   />
                   <p class="mb-2">
-                    {{ $t('pages.setting.sections.bot_id.description') }}
+                    {{ $t('pages.movie.sections.bot_id.description') }}
                   </p>
                   <div class="flex">
                     <FormTextInput v-model="id" class="w-full md:w-1/3">
@@ -198,7 +194,7 @@ const validate = async () => {
                 </CardContent>
                 <CardFooter class="justify-between">
                   <p>
-                    {{ $t('pages.setting.sections.bot_id.footer') }}
+                    {{ $t('pages.movie.sections.bot_id.footer') }}
                   </p>
                 </CardFooter>
               </Card>
@@ -213,12 +209,10 @@ const validate = async () => {
                 <CardContent>
                   <CardTitle
                     class="capitalize"
-                    :text="$t('pages.setting.sections.protection_spam.title')"
+                    :text="$t('pages.movie.sections.protection_spam.title')"
                   />
                   <p class="mb-2">
-                    {{
-                      $t('pages.setting.sections.protection_spam.description')
-                    }}
+                    {{ $t('pages.movie.sections.protection_spam.description') }}
                   </p>
                   <div class="flex">
                     <FormSwitch v-model="enableSpamProtection">
@@ -232,7 +226,7 @@ const validate = async () => {
                 </CardContent>
                 <CardFooter class="justify-between">
                   <p>
-                    {{ $t('pages.setting.sections.protection_spam.footer') }}
+                    {{ $t('pages.movie.sections.protection_spam.footer') }}
                   </p>
                 </CardFooter>
               </Card>
@@ -243,22 +237,20 @@ const validate = async () => {
                   <CardTitle
                     class="capitalize"
                     :text="
-                      $t(
-                        'pages.setting.sections.advanced_enable_advanced.title'
-                      )
+                      $t('pages.movie.sections.advanced_enable_advanced.title')
                     "
                   />
                   <p class="mb-2">
                     {{
                       $t(
-                        'pages.setting.sections.advanced_enable_advanced.description'
+                        'pages.movie.sections.advanced_enable_advanced.description'
                       )
                     }}
                   </p>
                   <div class="flex">
-                    <FormSwitch v-model="enableAdvancedSetting">
+                    <FormSwitch v-model="enableAdvancedmovie">
                       <span class="capitalize">{{
-                        enableAdvancedSetting
+                        enableAdvancedmovie
                           ? $t('others.enabled')
                           : $t('others.disabled')
                       }}</span>
@@ -266,18 +258,18 @@ const validate = async () => {
                   </div>
                 </CardContent>
               </Card>
-              <Card class="mb-4" :disabled="!enableAdvancedSetting">
+              <Card class="mb-4" :disabled="!enableAdvancedmovie">
                 <CardContent>
                   <CardTitle
                     class="capitalize"
                     :text="
-                      $t('pages.setting.sections.advanced_dir_listing.title')
+                      $t('pages.movie.sections.advanced_dir_listing.title')
                     "
                   />
                   <p class="mb-2">
                     {{
                       $t(
-                        'pages.setting.sections.advanced_dir_listing.description'
+                        'pages.movie.sections.advanced_dir_listing.description'
                       )
                     }}
                   </p>

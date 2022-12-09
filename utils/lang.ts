@@ -9,6 +9,11 @@ export interface ILocales {
 }
 
 export const availableLocales: ILocales = {
+  vi: {
+    name: 'Tiếng Việt',
+    iso: 'vi',
+    flag: '🇻🇳',
+  },
   en: {
     name: 'English',
     iso: 'en',

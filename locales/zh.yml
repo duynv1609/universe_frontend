@@ -28,7 +28,7 @@ pages:
     reset: 重置
     identity: 标识
     full_name: 全名
-  getting-started:
+  category:
     nav: 快速开始
     title: 快速开始
     description: 这是一个快速开始页面

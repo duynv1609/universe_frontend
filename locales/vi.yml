@@ -1,0 +1,72 @@
+components:
+  language_switcher:
+    change_language: change language
+  theme_switcher:
+    theme: theme
+    change_theme: change theme
+pages:
+  index:
+    title: nuxt 3[]awesome[]starter
+  404:
+    title: page not found
+  nation:
+    nav: quốc gia
+    title: quốc gia page
+    description: this is a quốc gia page
+    just_blank_page_with_title: just quốc gia page with title
+  test:
+    nav: phim lẻ
+    title: phim lẻ
+    description: this is a phim lẻ page
+  series:
+    nav: phim bộ
+    title: phim bộ
+    description: this is a phim bộ page
+    counter: counter
+    increment: increment
+    decrement: decrement
+    reset: reset
+    identity: identity
+    full_name: fullName
+  category:
+    nav: thể loại
+    title: thể loại
+    description: this is a thể loại page
+  movie:
+    nav: phim lẻ
+    title: phim lẻ
+    description: this is a phim lẻ page
+    sections:
+      validate_username:
+        title: validate github profile
+        description: type your github username and click the button to validate.
+        footer: Learn more about
+        footer_button: validate
+        footer_link: github users api
+      bot_id:
+        title: bot id
+        description: This is your bot ID.
+        footer: Used when interacting with the bot.
+      protection_spam:
+        title: spam protection
+        description: toggle enable to remove the red border
+        footer: if enable we will secure your comments from spam
+      advanced_enable_advanced:
+        title: enable advanced settings
+        description: you can enable advanced settings to change the settings
+      advanced_dir_listing:
+        title: directory listing
+        description: if no index file is present within a directory, the directory contents will be displayed.
+  dashboard:
+    nav: dashboard
+    title: dashboard
+    index:
+      nav: home
+      title: home
+banners:
+  welcome: hello, welcome to %{app_name}!
+others:
+  learn_more: learn more
+  copy: copy
+  enabled: enabled
+  disabled: disabled
