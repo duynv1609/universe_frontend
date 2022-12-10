@@ -6,6 +6,7 @@ export interface IMenuItem {
   text: string
   href?: any
   route?: any
+  has_icon?: boolean
 }
 
 const { t } = useLang()
@@ -20,7 +21,12 @@ const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.series.nav'), route: { name: 'series' } },
   { type: 'link', text: t('pages.movie.nav'), route: { name: 'movie' } },
   { type: 'link', text: t('pages.cartoon.nav'), route: { name: 'cartoon' } },
-  { type: 'link', text: t('pages.cinema.nav'), route: { name: 'cinema' } },
+  {
+    type: 'link',
+    text: t('pages.cinema.nav'),
+    route: { name: 'cinema' },
+    has_icon: true,
+  },
 ])
 </script>
 
@@ -42,6 +48,18 @@ const menus = computed((): IMenuItem[] => [
     </template>
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
+        <v-text-field
+          bg-color="#151f30"
+          class="w-100 mr-2 rounded-xl max-w-xs"
+          placeholder-color="#fff"
+          density="compact"
+          variant="solo"
+          color="#fff"
+          label="Tìm kiếm..."
+          append-inner-icon="mdi-magnify"
+          single-line
+          hide-details
+        ></v-text-field>
         <nav
           class="text-sm leading-6 font-semibold text-grey-lighten-2"
           role="navigation"
@@ -53,10 +71,12 @@ const menus = computed((): IMenuItem[] => [
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline hover:text-light-blue-darken-2 uppercase"
-                >{{ item.text }}
-                <v-no-ssr>
-                  <SignIcon />
-                </v-no-ssr>
+              >
+                <span class="d-flex align-center">
+                  {{ item.text }}
+
+                  <SignIcon v-if="item.has_icon" />
+                </span>
               </Anchor>
               <Button
                 v-else-if="item.type === 'button'"

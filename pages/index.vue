@@ -1,4 +1,18 @@
 <script lang="ts" setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+const modules = computed(() => [Navigation, Pagination, Scrollbar, A11y])
+
+const onSwiper = (swiper) => {
+  console.log(swiper)
+}
+const onSlideChange = () => {
+  console.log('slide change')
+}
+
 // composable
 const { t } = useLang()
 
@@ -47,6 +61,82 @@ const copyBash = () => {
 </script>
 
 <template>
+  <v-container fluid class="!px-0">
+    <v-row>
+      <v-col cols="12">
+        <swiper
+          navigation
+          centered-slides
+          :modules="modules"
+          :slides-per-view="2"
+          :space-between="20"
+          grab-cursor
+          free-mode
+          loop
+          @swiper="onSwiper"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+          <swiper-slide>
+            <v-img
+              width="100%"
+              style="min-width: 864px; height: 500px"
+              cover
+              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+            ></v-img
+          ></swiper-slide>
+        </swiper>
+      </v-col>
+    </v-row>
+  </v-container>
+
   <PageWrapper class="flex-1 flex">
     <div class="background-overlay">
       <div
