@@ -16,13 +16,9 @@ const menus = computed((): IMenuItem[] => [
   },
   { type: 'link', text: t('pages.nation.nav'), route: { name: 'nation' } },
   { type: 'link', text: t('pages.series.nav'), route: { name: 'series' } },
-  // { type: 'link', text: t('pages.post.nav'), route: { name: 'post' } },
   { type: 'link', text: t('pages.movie.nav'), route: { name: 'movie' } },
-  {
-    type: 'button',
-    text: t('pages.dashboard.nav'),
-    route: { name: 'dashboard' },
-  },
+  { type: 'link', text: t('pages.cartoon.nav'), route: { name: 'cartoon' } },
+  { type: 'link', text: t('pages.cinema.nav'), route: { name: 'cinema' } },
 ])
 </script>
 
@@ -55,8 +51,9 @@ const menus = computed((): IMenuItem[] => [
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline hover:text-light-blue-darken-2 uppercase"
-                >{{ item.text }}</Anchor
-              >
+                >{{ item.text }}
+                <nuxt-icon name="live"></nuxt-icon>
+              </Anchor>
               <Button
                 v-else-if="item.type === 'button'"
                 :text="item.text"
@@ -103,8 +100,8 @@ const menus = computed((): IMenuItem[] => [
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                   class="flex-1 hover:no-underline capitalize"
-                  >{{ item.text }}</Anchor
-                >
+                  >{{ item.text }}
+                </Anchor>
                 <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"

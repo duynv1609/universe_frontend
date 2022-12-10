@@ -18,3 +18,4 @@ dist
 
 # dev
 .original
+.pnpm-store

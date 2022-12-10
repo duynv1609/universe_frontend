@@ -14,10 +14,14 @@ pages:
     title: quốc gia page
     description: this is a quốc gia page
     just_blank_page_with_title: just quốc gia page with title
-  test:
-    nav: phim lẻ
-    title: phim lẻ
-    description: this is a phim lẻ page
+  cartoon:
+    nav: hoạt hình
+    title: hoạt hình
+    description: this is a hoạt hình page
+  cinema:
+    nav: phim chiếu rạp
+    title: phim chiếu rạp
+    description: this is a phim chiếu rạp page
   series:
     nav: phim bộ
     title: phim bộ

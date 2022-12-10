@@ -38,7 +38,7 @@ useHead({
     {
       hid: 'description',
       name: 'description',
-      content: 'Nuxt 3 Awesome Starter',
+      content: 'Nuxt 3s Awesome Starter',
     },
   ],
   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

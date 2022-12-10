@@ -2,6 +2,7 @@ import { IntlifyModuleOptions } from '@intlify/nuxt3'
 import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import vuetify from 'vite-plugin-vuetify'
+import NuxtIcons from 'nuxt-icons'
 
 declare module '@nuxt/schema' {
   interface NuxtConfig {
@@ -41,6 +42,7 @@ export default defineNuxtConfig({
 
   // modules
   modules: [
+    NuxtIcons,
     'unplugin-icons/nuxt',
     '@intlify/nuxt3',
     '@pinia/nuxt',
@@ -115,5 +117,9 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'github-dark',
     },
+  },
+
+  NuxtIcons: {
+    addPlugin: true,
   },
 })
