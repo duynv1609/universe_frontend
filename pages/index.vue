@@ -1,12 +1,18 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-const modules = computed(() => [Navigation, Pagination, Scrollbar, A11y])
+const modules = computed(() => [
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+])
 
-const onSwiper = (swiper) => {
+const onSwiper = (swiper: any) => {
   console.log(swiper)
 }
 const onSlideChange = () => {
@@ -70,6 +76,10 @@ const copyBash = () => {
           :modules="modules"
           :slides-per-view="2"
           :space-between="20"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: true,
+          }"
           grab-cursor
           free-mode
           loop
@@ -89,7 +99,7 @@ const copyBash = () => {
               width="100%"
               style="min-width: 864px; height: 500px"
               cover
-              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+              src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
             ></v-img
           ></swiper-slide>
           <swiper-slide>
@@ -113,7 +123,7 @@ const copyBash = () => {
               width="100%"
               style="min-width: 864px; height: 500px"
               cover
-              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+              src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
             ></v-img
           ></swiper-slide>
           <swiper-slide>
@@ -121,7 +131,7 @@ const copyBash = () => {
               width="100%"
               style="min-width: 864px; height: 500px"
               cover
-              src="https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
+              src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
             ></v-img
           ></swiper-slide>
           <swiper-slide>
