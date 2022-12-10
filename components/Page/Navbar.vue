@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import SignIcon from '@/assets/icons/live.svg'
+
 export interface IMenuItem {
   type: 'link' | 'button'
   text: string
@@ -52,7 +54,9 @@ const menus = computed((): IMenuItem[] => [
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline hover:text-light-blue-darken-2 uppercase"
                 >{{ item.text }}
-                <nuxt-icon name="live"></nuxt-icon>
+                <v-no-ssr>
+                  <SignIcon />
+                </v-no-ssr>
               </Anchor>
               <Button
                 v-else-if="item.type === 'button'"

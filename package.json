@@ -70,7 +70,7 @@
   "dependencies": {
     "@mdi/font": "^7.0.96",
     "axios": "^1.2.0",
-    "nuxt-icons": "^3.0.0",
+    "nuxt-svgo": "^1.1.0",
     "vee-validate": "^4.7.3",
     "vite-plugin-vuetify": "^1.0.0",
     "vuetify": "^3.0.3"
