@@ -80,13 +80,13 @@ const toggleOptions = (show?: boolean) => {
           <slot name="title">
             <NuxtLink
               tag="a"
-              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-light-blue-darken-2 dark:text-gray-200"
+              class="logo mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-light-blue-darken-2 dark:text-gray-200"
               :to="{ name: 'index' }"
             >
               <span class="sr-only">home</span>
               <span class="flex items-center">
                 <img
-                  src="~/assets/images/logo.svg"
+                  src="~/assets/images/logo.png"
                   class="inline-block mr-2 text-lg text-primary-500"
                 />
                 <!-- <IconLo:logo

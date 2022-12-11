@@ -37,5 +37,22 @@ html.dark {
   }
 }
 
+.logo {
+  width: 40px;
+}
+
+.logo-footer {
+  width: 60px;
+}
+
+.footer .v-list-item {
+  padding-left: 0 !important;
+}
+
+.footer_copyright {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 // animations
 @import 'animations/transitions';
