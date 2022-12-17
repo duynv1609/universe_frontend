@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import p from './../../package.json'
+// import p from './../../package.json'
 const app = useAppConfig()
 </script>
 
