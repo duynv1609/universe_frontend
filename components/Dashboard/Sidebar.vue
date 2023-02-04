@@ -25,14 +25,14 @@ export default defineComponent({
   <div
     ref="sidebar"
     :class="{
-      'fixed top-0 hidden pt-12 lg:flex lg:w-60 xl:w-80 h-screen':
+      'fixed top-12 hidden pt-12 lg:flex lg:w-60 xl:w-60 h-screen':
         mode === 'normal',
       'relative flex-1 flex flex-col w-full': mode === 'mobile',
     }"
   >
-    <div class="flex-1 overflow-y-auto pl-4 lg:pl-0 pr-4 py-4">
+    <div class="flex-1 overflow-y-auto pl-4 lg:pl-0 pr-4 py-8">
       <ul>
-        <li v-for="i in 29" :key="i">
+        <li v-for="i in 20" :key="i">
           <Anchor
             :to="{ name: 'dashboard' }"
             class="group flex items-center mb-4 hover:no-underline"
@@ -46,7 +46,7 @@ export default defineComponent({
                   i !== 1,
               }"
             >
-              <IconUil:apps class="text-xs" />
+              <IconMdi:home class="text-xs" />
             </div>
             <span
               class="text-sm font-semibold capitalize"

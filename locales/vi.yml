@@ -65,8 +65,8 @@ pages:
     nav: dashboard
     title: dashboard
     index:
-      nav: home
-      title: home
+      nav: dashboard
+      title: dashboard
 banners:
   welcome: hello, welcome to %{app_name}!
 others:
