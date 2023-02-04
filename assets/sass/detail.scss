@@ -1,0 +1,132 @@
+.article__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.article__actions--details .article__download,
+.article__actions--details .article__favorites {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.article__download a {
+  margin-left: 10px;
+  color: #fff;
+  margin-right: 10px;
+  position: relative;
+  line-height: 22px;
+}
+
+.article__download a:hover {
+  color: #2f80ed;
+}
+
+.series-wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+.series-wrap__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.series-wrap__title svg {
+  width: 22px;
+  height: auto;
+  margin-right: 10px;
+  fill: #2f80ed;
+}
+
+/*==============================
+	Categories
+==============================*/
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.categories__title {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.categories__item {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  min-width: 60px;
+  width: auto;
+  color: #e0e0e0;
+  font-size: 14px;
+  background-color: #151f30;
+  border-radius: 12px;
+  padding: 0 12px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.categories__item:hover {
+  color: #fff;
+  background-color: #2f80ed;
+}
+/*==============================*/
+
+.article__trailer {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.article__trailer svg {
+  display: block;
+  stroke: #fff;
+  width: 46px;
+  height: auto;
+  margin-right: 15px;
+  transition: stroke 0.5s;
+  z-index: 1;
+}
+
+.article__trailer span {
+  z-index: 1;
+}
+
+.article__trailer:hover svg {
+  cursor: pointer;
+  stroke: #2f80ed;
+}
+
+@media (min-width: 768px) {
+  .series-wrap {
+    margin-top: 20px;
+  }
+}
