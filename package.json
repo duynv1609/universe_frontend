@@ -74,6 +74,7 @@
     "swiper": "^8.4.5",
     "vee-validate": "^4.7.3",
     "vite-plugin-vuetify": "^1.0.0",
+    "vue3-carousel": "^0.2.8",
     "vuetify": "^3.0.3"
   }
 }

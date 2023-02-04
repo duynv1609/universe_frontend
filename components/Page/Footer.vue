@@ -4,16 +4,16 @@ const app = useAppConfig()
 </script>
 
 <template>
-  <footer class="footer">
-    <div class="v-container">
-      <div class="v-row">
+  <footer class="footer mt-20">
+    <v-container>
+      <v-row >
         <div class="v-col-12 v-col-sm-8 v-col-md-6 v-col-lg-4 v-col-xl-3">
           <div class="footer__flixtv">
             <img src="~/assets/images/logo.png" alt="" class="logo-footer" />
           </div>
           <p class="footer__tagline pt-4">
             Vũ Trụ Phim, <br />
-            Website phim dành cho cả vũ trụ.
+            Website phim cho cả vũ trụ.
           </p>
           <div class="footer__social pt-4 d-flex">
             <a href="#" target="_blank" class="pr-3"
@@ -128,12 +128,10 @@ const app = useAppConfig()
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </v-row>
+    </v-container>
 
-    <div
-      class="footer_copyright v-container border-t lg:border-gray-900/10 dark:border-gray-50/[0.2] py-0"
-    >
+    <div class="footer_copyright v-container border-t lg:border-gray-900/10 dark:border-gray-50/[0.2] py-0">
       <div class="w-full py-4 text-center md:text-left">
         <div class="text-xs text-gray-600 dark:text-gray-400">
           Copyright © 2022 <a :href="app.author.link">{{ app.name }}</a

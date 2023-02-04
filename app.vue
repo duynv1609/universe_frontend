@@ -32,7 +32,7 @@ const vuetifyLocale = computed(() => getVuetifyLocale(locale.value))
 
 useHead({
   title: app.name,
-  titleTemplate: '%s - Nuxt 3 Awesome Starter',
+  titleTemplate: '%s - Website phim cho cả vũ trụ',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
