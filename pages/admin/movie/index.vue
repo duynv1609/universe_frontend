@@ -2,9 +2,8 @@
 definePageMeta({
   layout: 'dashboard',
 })
-
 useMeta({
-  title: 'Dashboard',
+  title: 'Danh sách phim',
 })
 </script>
 <script lang="ts">

@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 useMeta({
-  title: 'Dashboard',
+  title: 'Thêm mới phim',
 })
 </script>
 <script lang="ts">
@@ -40,7 +40,7 @@ export default {
       <!-- main title -->
       <v-col cols="12">
         <div class="main__title">
-          <h2>Add new item</h2>
+          <h2>Thêm mới phim</h2>
         </div>
       </v-col>
 
@@ -115,11 +115,8 @@ export default {
                 <v-col sm="6" lg="3">
                   <div class="form__group">
                     <v-select
-                      clearable
-                      chips
-                      label="Select"
+                      label="Chất lượng"
                       :items="['FullHD', 'HD']"
-                      multiple
                       variant="solo"
                     ></v-select>
                   </div>
@@ -128,39 +125,6 @@ export default {
                 <v-col sm="6" lg="3">
                   <div class="form__group">
                     <input type="text" class="form__input" placeholder="Age" />
-                  </div>
-                </v-col>
-
-                <v-col lg="6">
-                  <div class="form__group">
-                    <v-select
-                      clearable
-                      chips
-                      label="Select"
-                      :items="[
-                        'Afghanistan',
-                        'Colorado',
-                        'Florida',
-                        'Georgia',
-                        'Texas',
-                        'Wyoming',
-                      ]"
-                      multiple
-                      variant="solo"
-                    ></v-select>
-                  </div>
-                </v-col>
-
-                <v-col lg="6">
-                  <div class="form__group">
-                    <v-select
-                      clearable
-                      chips
-                      label="Select"
-                      :items="['Action']"
-                      multiple
-                      variant="solo"
-                    ></v-select>
                   </div>
                 </v-col>
 

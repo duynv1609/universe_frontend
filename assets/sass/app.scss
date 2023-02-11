@@ -933,3 +933,28 @@ html.dark {
 @import 'admin/sidebar';
 //movie
 @import 'admin/movie';
+@import 'admin/dashboard';
+
+// general
+.v-table-custom-color {
+  background: #151F30 !important;
+}
+
+.view-more-custom {
+  padding: 5px 15px;
+  background-color: #131720;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+.view-more-custom:hover {
+  color: #2f80ed !important;
+}
+
+.icon-color-custom.v-btn--icon .v-icon {
+  color: #2f80ed !important;
+}
+
+.v-card {
+  border-radius: 16px !important;
+}
