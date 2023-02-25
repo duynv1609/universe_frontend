@@ -3,7 +3,7 @@
 # 👋 Welcome to Nuxt
 
 
-Nuxt's goal is to make web development intuitive and performant, with a great developer experience.<br>Learn more in the ['What is Nuxt?'](https://nuxt.com/docs/getting-started/introduction) section of our documentation.
+Nuxt's goal is to make web development intuitive and performant, with a great developer experience.<br>Learn more in the ['What is Nuxt?'](https://nuxt.com/docs/category/introduction) section of our documentation.
 ## Project setup
 ### Cach 1
 #### install dependencies

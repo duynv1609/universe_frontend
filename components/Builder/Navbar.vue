@@ -1,60 +1,60 @@
 <script lang="ts" setup>
 // state
-const app = useAppConfig()
-const navbar = ref(null)
-const showDrawer = useState<boolean>('navbar.showDrawer', () => false)
-const showOptions = useState<boolean>('navbar.showOptions', () => false)
+// const app = useAppConfig()
+const navbar = ref(null);
+const showDrawer = useState<boolean>('navbar.showDrawer', () => false);
+const showOptions = useState<boolean>('navbar.showOptions', () => false);
 
 // lifecycle
-let timer: NodeJS.Timer
+let timer: NodeJS.Timer;
 onMounted(() => {
-  if (!navbar.value) return
+  if (!navbar.value) return;
 
   // scroll
-  const { onScroll } = useSticky(navbar.value, 0)
-  setTimeout(() => onScroll(), 50)
+  const { onScroll } = useSticky(navbar.value, 0);
+  setTimeout(() => onScroll(), 50);
 
   // on show on mobile
   setInterval(() => {
     // must in mobile
-    const minW = 1024
+    const minW = 1024;
     if (window.innerWidth < minW) {
-      updateDrawerOptions()
+      updateDrawerOptions();
     }
-  }, 100)
-})
+  }, 100);
+});
 onBeforeUnmount(() => {
-  if (timer) clearInterval(timer)
-})
+  if (timer) clearInterval(timer);
+});
 
 // methods
 const updateDrawerOptions = () => {
   // drawer
   if (showDrawer.value || showOptions.value) {
-    document.body.classList.add('overflow-hidden')
+    document.body.classList.add('overflow-hidden');
   } else {
-    document.body.classList.remove('overflow-hidden')
+    document.body.classList.remove('overflow-hidden');
   }
-}
-const toggleDrawer = () => (showDrawer.value = !showDrawer.value)
+};
+const toggleDrawer = () => (showDrawer.value = !showDrawer.value);
 const toggleOptions = (show?: boolean) => {
   if (show) {
-    showOptions.value = show
+    showOptions.value = show;
   } else {
-    showOptions.value = !showOptions.value
+    showOptions.value = !showOptions.value;
   }
-}
+};
 </script>
 
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 dark:border-gray-50/[0.2] bg-white/[0.5] dark:bg-slate-900/[0.5]"
+    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 bg-grey-darken-5 dark:bg-slate-900/[0.5]"
   >
     <div id="navbar-banner" class="banner">
       <slot name="banner" />
     </div>
-    <div class="max-w-8xl w-full mx-auto">
+    <div class="max-w-7xl w-full py-5 mx-auto">
       <div class="py-3 lg:px-8 mx-4 lg:mx-0">
         <div class="relative flex items-center">
           <!-- drawer:toggle -->
@@ -80,25 +80,26 @@ const toggleOptions = (show?: boolean) => {
           <slot name="title">
             <NuxtLink
               tag="a"
-              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-gray-900 dark:text-gray-200"
+              class="logo mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-light-blue-darken-2 dark:text-gray-200"
               :to="{ name: 'index' }"
             >
               <span class="sr-only">home</span>
               <span class="flex items-center">
-                <IconSimpleIcons:nuxtdotjs
+                <img
+                  src="~/assets/images/logo.png"
                   class="inline-block mr-2 text-lg text-primary-500"
                 />
-                {{ app.name }}
+                <!-- <IconLo:logo
+                  class="inline-block mr-2 text-lg text-primary-500"
+                /> -->
+                <!-- {{ app.name }} -->
               </span>
             </NuxtLink>
           </slot>
           <!-- menu -->
           <slot name="menu" />
           <!-- options:toggle -->
-          <div
-            v-if="$slots['options']"
-            class="flex-1 flex justify-end lg:hidden"
-          >
+          <div v-if="$slots['options']" class="flex-1 flex justify-end lg:hidden">
             <button
               class="flex items-center focus:outline-none"
               aria-label="Toggle Options Menu"
@@ -131,11 +132,7 @@ const toggleOptions = (show?: boolean) => {
 
         <!-- options -->
         <div v-if="showOptions && $slots['options']">
-          <slot
-            name="options"
-            :toggle-options="toggleOptions"
-            :show-options="showOptions"
-          />
+          <slot name="options" :toggle-options="toggleOptions" :show-options="showOptions" />
         </div>
       </Teleport>
     </ClientOnly>

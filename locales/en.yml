@@ -9,11 +9,15 @@ pages:
     title: nuxt 3[]awesome[]starter
   404:
     title: page not found
-  blank:
-    nav: blank
-    title: blank page
-    description: this is a blank page
-    just_blank_page_with_title: just blank page with title
+  nation:
+    nav: nation
+    title: nation page
+    description: this is a nation page
+    just_blank_page_with_title: just nation page with title
+  cartoon:
+    nav: hoạt hình
+    title: hoạt hình
+    description: this is a hoạt hình page
   post:
     nav: post
     title: post
@@ -28,10 +32,10 @@ pages:
     reset: reset
     identity: identity
     full_name: fullName
-  getting-started:
-    nav: getting started
-    title: getting started
-    description: this is a getting started page
+  category:
+    nav: category
+    title: category
+    description: this is a category page
   setting:
     nav: setting
     title: setting
@@ -61,8 +65,8 @@ pages:
     nav: dashboard
     title: dashboard
     index:
-      nav: home
-      title: home
+      nav: dashboard
+      title: dashboard
 banners:
   welcome: hello, welcome to %{app_name}!
 others:

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { capitalize } from '~/utils/str'
+import { capitalize } from '~/utils/str';
 
 // composable
-const { t } = useLang()
+const { t } = useLang();
 
 // compiler macro
 definePageMeta({
   layout: 'page',
-})
+});
 useHead(() => ({
   title: capitalize(t('pages.post.title')),
   meta: [
@@ -16,7 +16,7 @@ useHead(() => ({
       content: t('pages.post.description'),
     },
   ],
-}))
+}));
 </script>
 
 <template>
@@ -41,9 +41,7 @@ useHead(() => ({
               </Anchor>
             </div>
             <div class="flex flex-col">
-              <div
-                class="text-xl font-semibold text-slate-800 dark:text-gray-50"
-              >
+              <div class="text-xl font-semibold text-slate-800 dark:text-gray-50">
                 {{ article.title }}
               </div>
               <div class="text-slate-700 dark:text-gray-300 mb-1">
