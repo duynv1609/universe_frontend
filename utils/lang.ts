@@ -1,11 +1,11 @@
-import { useI18n } from 'vue-i18n'
+import { useI18n } from 'vue-i18n';
 
 export interface ILocales {
   [key: string]: {
-    name: string
-    iso: string
-    flag: string
-  }
+    name: string;
+    iso: string;
+    flag: string;
+  };
 }
 
 export const availableLocales: ILocales = {
@@ -39,55 +39,50 @@ export const availableLocales: ILocales = {
     iso: 'zh',
     flag: '🇨🇳',
   },
-}
+};
 
 export function LanguageManager() {
   // composable
-  const { locale } = useI18n()
-  const localeUserSetting = useCookie('locale')
+  const { locale } = useI18n();
+  const localeUserSetting = useCookie('locale');
 
   // methods
   const getSystemLocale = (): string => {
     try {
-      const foundLang = window
-        ? window.navigator.language.substring(0, 2)
-        : 'en'
-      return availableLocales[foundLang] ? foundLang : 'en'
+      const foundLang = window ? window.navigator.language.substring(0, 2) : 'en';
+      return availableLocales[foundLang] ? foundLang : 'en';
     } catch (error) {
-      return 'en'
+      return 'en';
     }
-  }
-  const getUserLocale = (): string =>
-    localeUserSetting.value || getSystemLocale()
+  };
+  const getUserLocale = (): string => localeUserSetting.value || getSystemLocale();
 
   // state
-  const localeSetting = useState<string>('locale.setting', () =>
-    getUserLocale()
-  )
+  const localeSetting = useState<string>('locale.setting', () => getUserLocale());
 
   // watchers
   watch(localeSetting, (localeSetting) => {
-    localeUserSetting.value = localeSetting
-    locale.value = localeSetting
-  })
+    localeUserSetting.value = localeSetting;
+    locale.value = localeSetting;
+  });
 
   // init locale
   const init = () => {
-    localeSetting.value = getUserLocale()
-  }
-  locale.value = localeSetting.value
+    localeSetting.value = getUserLocale();
+  };
+  locale.value = localeSetting.value;
 
   // lifecycle
-  onBeforeMount(() => init())
+  onBeforeMount(() => init());
 
   return {
     localeSetting,
     init,
-  }
+  };
 }
 
 export function getVuetifyLocale(appLocale: string): string {
-  const key = appLocale as keyof typeof availableLocales
+  const key = appLocale as keyof typeof availableLocales;
 
-  return availableLocales[key].iso || availableLocales.en.iso
+  return availableLocales[key].iso || availableLocales.en.iso;
 }

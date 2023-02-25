@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import SignIcon from '@/assets/icons/live.svg'
+import SignIcon from '@/assets/icons/live.svg';
 
 export interface IMenuItem {
-  type: 'link' | 'button'
-  text: string
-  href?: any
-  route?: any
-  has_icon?: boolean
+  type: 'link' | 'button';
+  text: string;
+  href?: any;
+  route?: any;
+  has_icon?: boolean;
 }
 
-const { t } = useLang()
+const { t } = useLang();
 // const app = useAppConfig()
 const menus = computed((): IMenuItem[] => [
   {
@@ -27,7 +27,7 @@ const menus = computed((): IMenuItem[] => [
     route: { name: 'cinema' },
     has_icon: true,
   },
-])
+]);
 </script>
 
 <template>
@@ -60,10 +60,7 @@ const menus = computed((): IMenuItem[] => [
           single-line
           hide-details
         ></v-text-field>
-        <nav
-          class="text-sm leading-6 font-semibold text-grey-lighten-2"
-          role="navigation"
-        >
+        <nav class="text-sm leading-6 font-semibold text-grey-lighten-2" role="navigation">
           <ul class="flex items-center space-x-8">
             <li v-for="(item, i) in menus" :key="i">
               <Anchor
@@ -89,9 +86,7 @@ const menus = computed((): IMenuItem[] => [
             </li>
           </ul>
         </nav>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
+        <div class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]">
           <LanguageSwitcher />
           <ThemeSwitcher />
           <Anchor
@@ -158,11 +153,7 @@ const menus = computed((): IMenuItem[] => [
           <IconMdi:github-face />
           <span class="ml-1">Github</span>
         </Button>
-        <Button
-          text="Close"
-          type="secondary"
-          @click.prevent="toggleOptions(false)"
-        />
+        <Button text="Close" type="secondary" @click.prevent="toggleOptions(false)" />
       </ActionSheet>
     </template>
   </BuilderNavbar>

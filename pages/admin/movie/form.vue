@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'dashboard',
-})
+});
 
 useMeta({
   title: 'Movie',
-})
+});
 </script>
 <script lang="ts">
 export default {
@@ -15,22 +15,22 @@ export default {
       dialogStatus: false,
       url: null,
       newImage: null,
-    }
+    };
   },
   methods: {
     previewFiles(event) {
-      const file = event.target.files[0]
+      const file = event.target.files[0];
 
-      const theReader = new FileReader()
+      const theReader = new FileReader();
       // Nhớ sử dụng async/await để chờ khi đã convert thành công image sang base64 thì mới bắt đầu gán cho biến newImage
       // đây là 1 kinh nghiệm của mình khi upload multiple ảnh
       theReader.onloadend = async () => {
-        this.newImage = await theReader.result
-      }
-      theReader.readAsDataURL(file)
+        this.newImage = await theReader.result;
+      };
+      theReader.readAsDataURL(file);
     },
   },
-}
+};
 </script>
 
 <template>
@@ -63,11 +63,7 @@ export default {
               <v-row>
                 <v-col cols="12">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Name En"
-                    />
+                    <input type="text" class="form__input" placeholder="Name En" />
                   </div>
                 </v-col>
               </v-row>
@@ -89,21 +85,13 @@ export default {
                   <v-row>
                     <v-col cols="12" lg="6">
                       <div class="form__group form__group--link">
-                        <input
-                          type="text"
-                          class="form__input"
-                          placeholder="Poster link"
-                        />
+                        <input type="text" class="form__input" placeholder="Poster link" />
                       </div>
                     </v-col>
 
                     <v-col lg="6">
                       <div class="form__group form__group--link">
-                        <input
-                          type="text"
-                          class="form__input"
-                          placeholder="Backdrop link"
-                        />
+                        <input type="text" class="form__input" placeholder="Backdrop link" />
                       </div>
                     </v-col>
                   </v-row>
@@ -113,11 +101,7 @@ export default {
                 <!-- trailer url -->
                 <v-col cols="12">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Trailer url"
-                    />
+                    <input type="text" class="form__input" placeholder="Trailer url" />
                   </div>
                 </v-col>
                 <!-- end trailer url -->
@@ -149,11 +133,7 @@ export default {
                 <!-- release year -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Release year"
-                    />
+                    <input type="text" class="form__input" placeholder="Release year" />
                   </div>
                 </v-col>
                 <!-- end release year -->
@@ -161,11 +141,7 @@ export default {
                 <!-- duration -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Duration"
-                    />
+                    <input type="text" class="form__input" placeholder="Duration" />
                   </div>
                 </v-col>
                 <!-- end duration -->
@@ -173,11 +149,7 @@ export default {
                 <!-- episode -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Episode"
-                    />
+                    <input type="text" class="form__input" placeholder="Episode" />
                   </div>
                 </v-col>
                 <!-- end episode -->
@@ -185,32 +157,20 @@ export default {
                 <!-- country -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <v-select
-                      label="Country"
-                      :items="['FullHD', 'HD']"
-                      variant="solo"
-                    ></v-select>
+                    <v-select label="Country" :items="['FullHD', 'HD']" variant="solo"></v-select>
                   </div>
                 </v-col>
                 <!-- end country -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <v-select
-                      label="Quality"
-                      :items="['FullHD', 'HD']"
-                      variant="solo"
-                    ></v-select>
+                    <v-select label="Quality" :items="['FullHD', 'HD']" variant="solo"></v-select>
                   </div>
                 </v-col>
 
                 <!-- language -->
                 <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <v-select
-                      label="Language"
-                      :items="['FullHD', 'HD']"
-                      variant="solo"
-                    ></v-select>
+                    <v-select label="Language" :items="['FullHD', 'HD']" variant="solo"></v-select>
                   </div>
                 </v-col>
                 <!-- end language -->
@@ -250,9 +210,7 @@ export default {
                   <v-row justify="end">
                     <v-col sm="6" lg="4">
                       <div class="form__group">
-                        <v-btn size="large" color="warning">
-                          Add Episode
-                        </v-btn>
+                        <v-btn size="large" color="warning"> Add Episode </v-btn>
                       </div>
                     </v-col>
                   </v-row>

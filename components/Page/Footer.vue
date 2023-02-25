@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const app = useAppConfig()
+const app = useAppConfig();
 </script>
 
 <template>
@@ -137,13 +137,9 @@ const app = useAppConfig()
         <div class="text-xs text-gray-600 dark:text-gray-400">
           Copyright © 2022 <a :href="app.author.link">{{ app.name }}</a
           >. All rights reserved. Made with <span class="text-red-500">❤</span>
-          <div
-            class="flex flex-col md:flex-row space-x-2 items-center md:float-right"
-          >
+          <div class="flex flex-col md:flex-row space-x-2 items-center md:float-right">
             <span class="text-center md:text-right"> Liên hệ: </span>
-            <a
-              href=""
-              class="block bg-blue-500 rounded px-1 py-0.5 text-white text-xs"
+            <a href="" class="block bg-blue-500 rounded px-1 py-0.5 text-white text-xs"
               >ads@vutruphim.net</a
             >
           </div>

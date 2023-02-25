@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { capitalize } from '~/utils/str'
+import { capitalize } from '~/utils/str';
 
 // composable
-const { t } = useLang()
+const { t } = useLang();
 
 // compiler macro
 definePageMeta({
   layout: 'page',
-})
+});
 useHead(() => ({
   title: capitalize(t('pages.category.title')),
   meta: [
@@ -16,7 +16,7 @@ useHead(() => ({
       content: t('pages.category.description'),
     },
   ],
-}))
+}));
 </script>
 
 <template>
@@ -65,12 +65,7 @@ useHead(() => ({
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select
-          :items="items"
-          label="Thể loại"
-          :dense="true"
-          height="10"
-        ></v-select>
+        <v-select :items="items" label="Thể loại" :dense="true" height="10"></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">

@@ -7,16 +7,16 @@ export default defineComponent({
     },
   },
   setup() {
-    const sidebar = ref(null)
+    const sidebar = ref(null);
 
     onMounted(() => {
       // const { onScroll } = useSticky(sidebar.value, -1000)
       // setTimeout(() => onScroll(), 50)
-    })
+    });
 
     return {
       sidebar,
-    }
+    };
   },
   data: () => ({
     items: [
@@ -76,7 +76,7 @@ export default defineComponent({
       },
     ],
   }),
-})
+});
 </script>
 
 <template>
@@ -114,11 +114,7 @@ export default defineComponent({
         </div>
       </v-list-item>
 
-      <v-list-item
-        prepend-icon="mdi-home"
-        title="Dashboard"
-        to="/admin"
-      ></v-list-item>
+      <v-list-item prepend-icon="mdi-home" title="Dashboard" to="/admin"></v-list-item>
 
       <v-list-group
         v-for="item in items"

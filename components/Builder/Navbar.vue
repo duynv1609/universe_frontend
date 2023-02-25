@@ -1,49 +1,49 @@
 <script lang="ts" setup>
 // state
 // const app = useAppConfig()
-const navbar = ref(null)
-const showDrawer = useState<boolean>('navbar.showDrawer', () => false)
-const showOptions = useState<boolean>('navbar.showOptions', () => false)
+const navbar = ref(null);
+const showDrawer = useState<boolean>('navbar.showDrawer', () => false);
+const showOptions = useState<boolean>('navbar.showOptions', () => false);
 
 // lifecycle
-let timer: NodeJS.Timer
+let timer: NodeJS.Timer;
 onMounted(() => {
-  if (!navbar.value) return
+  if (!navbar.value) return;
 
   // scroll
-  const { onScroll } = useSticky(navbar.value, 0)
-  setTimeout(() => onScroll(), 50)
+  const { onScroll } = useSticky(navbar.value, 0);
+  setTimeout(() => onScroll(), 50);
 
   // on show on mobile
   setInterval(() => {
     // must in mobile
-    const minW = 1024
+    const minW = 1024;
     if (window.innerWidth < minW) {
-      updateDrawerOptions()
+      updateDrawerOptions();
     }
-  }, 100)
-})
+  }, 100);
+});
 onBeforeUnmount(() => {
-  if (timer) clearInterval(timer)
-})
+  if (timer) clearInterval(timer);
+});
 
 // methods
 const updateDrawerOptions = () => {
   // drawer
   if (showDrawer.value || showOptions.value) {
-    document.body.classList.add('overflow-hidden')
+    document.body.classList.add('overflow-hidden');
   } else {
-    document.body.classList.remove('overflow-hidden')
+    document.body.classList.remove('overflow-hidden');
   }
-}
-const toggleDrawer = () => (showDrawer.value = !showDrawer.value)
+};
+const toggleDrawer = () => (showDrawer.value = !showDrawer.value);
 const toggleOptions = (show?: boolean) => {
   if (show) {
-    showOptions.value = show
+    showOptions.value = show;
   } else {
-    showOptions.value = !showOptions.value
+    showOptions.value = !showOptions.value;
   }
-}
+};
 </script>
 
 <template>
@@ -99,10 +99,7 @@ const toggleOptions = (show?: boolean) => {
           <!-- menu -->
           <slot name="menu" />
           <!-- options:toggle -->
-          <div
-            v-if="$slots['options']"
-            class="flex-1 flex justify-end lg:hidden"
-          >
+          <div v-if="$slots['options']" class="flex-1 flex justify-end lg:hidden">
             <button
               class="flex items-center focus:outline-none"
               aria-label="Toggle Options Menu"
@@ -135,11 +132,7 @@ const toggleOptions = (show?: boolean) => {
 
         <!-- options -->
         <div v-if="showOptions && $slots['options']">
-          <slot
-            name="options"
-            :toggle-options="toggleOptions"
-            :show-options="showOptions"
-          />
+          <slot name="options" :toggle-options="toggleOptions" :show-options="showOptions" />
         </div>
       </Teleport>
     </ClientOnly>

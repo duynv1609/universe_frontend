@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'dashboard',
-})
+});
 useMeta({
   title: 'Movie List',
-})
+});
 </script>
 <script lang="ts">
 export default {
@@ -12,9 +12,9 @@ export default {
     return {
       dialogDelete: false,
       dialogStatus: false,
-    }
+    };
   },
-}
+};
 </script>
 <template>
   <v-container>
@@ -133,9 +133,7 @@ export default {
                   <div class="main__table-text">1392</div>
                 </td>
                 <td>
-                  <div class="main__table-text main__table-text--green">
-                    Visible
-                  </div>
+                  <div class="main__table-text main__table-text--green">Visible</div>
                 </td>
                 <td>
                   <div class="main__table-text">24 Oct 2021</div>
@@ -147,10 +145,7 @@ export default {
                       icon="mdi-filmstrip-box-multiple"
                       @click="dialogStatus = true"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                           d="M12,13a1.49,1.49,0,0,0-1,2.61V17a1,1,0,0,0,2,0V15.61A1.49,1.49,0,0,0,12,13Zm5-4V7A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9ZM9,7a3,3,0,0,1,6,0V9H9Zm9,12a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"
                         />
@@ -159,20 +154,13 @@ export default {
 
                     <v-dialog v-model="dialogStatus">
                       <!-- modal status -->
-                      <div
-                        id="modal-status"
-                        class="zoom-anim-dialog mfp-hide modal"
-                      >
+                      <div id="modal-status" class="zoom-anim-dialog mfp-hide modal">
                         <h6 class="modal__title">Status change</h6>
 
-                        <p class="modal__text">
-                          Are you sure about immediately change status?
-                        </p>
+                        <p class="modal__text">Are you sure about immediately change status?</p>
 
                         <div class="modal__btns">
-                          <v-btn
-                            class="modal__btn modal__btn--apply"
-                            @click="dialogStatus = false"
+                          <v-btn class="modal__btn modal__btn--apply" @click="dialogStatus = false"
                             >Apply</v-btn
                           >
                           <v-btn
@@ -189,10 +177,7 @@ export default {
                       class="main__table-btn main__table-btn--view"
                       icon="mdi-filmstrip-box-multiple"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                           d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"
                         />
@@ -203,10 +188,7 @@ export default {
                       class="main__table-btn main__table-btn--edit"
                       icon="mdi-filmstrip-box-multiple"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                           d="M22,7.24a1,1,0,0,0-.29-.71L17.47,2.29A1,1,0,0,0,16.76,2a1,1,0,0,0-.71.29L13.22,5.12h0L2.29,16.05a1,1,0,0,0-.29.71V21a1,1,0,0,0,1,1H7.24A1,1,0,0,0,8,21.71L18.87,10.78h0L21.71,8a1.19,1.19,0,0,0,.22-.33,1,1,0,0,0,0-.24.7.7,0,0,0,0-.14ZM6.83,20H4V17.17l9.93-9.93,2.83,2.83ZM18.17,8.66,15.34,5.83l1.42-1.41,2.82,2.82Z"
                         />
@@ -218,10 +200,7 @@ export default {
                       icon="mdi-filmstrip-box-multiple"
                       @click="dialogDelete = true"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                           d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"
                         />
@@ -229,20 +208,13 @@ export default {
                     </v-btn>
 
                     <v-dialog v-model="dialogDelete">
-                      <div
-                        id="modal-delete"
-                        class="zoom-anim-dialog mfp-hide modal"
-                      >
+                      <div id="modal-delete" class="zoom-anim-dialog mfp-hide modal">
                         <h6 class="modal__title">Item delete</h6>
 
-                        <p class="modal__text">
-                          Are you sure to permanently delete this item?
-                        </p>
+                        <p class="modal__text">Are you sure to permanently delete this item?</p>
 
                         <div class="modal__btns">
-                          <v-btn
-                            class="modal__btn modal__btn--apply"
-                            @click="dialogDelete = false"
+                          <v-btn class="modal__btn modal__btn--apply" @click="dialogDelete = false"
                             >Delete</v-btn
                           >
                           <v-btn
