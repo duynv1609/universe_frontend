@@ -11,9 +11,7 @@
           <span class="ml-2 text-sm font-semibold">Alfian</span>
           <IconUil:angle-down />
         </div>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
+        <div class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]">
           <LanguageSwitcher />
           <ThemeSwitcher />
           <Anchor
@@ -51,11 +49,7 @@
           <IconMdi:github-face />
           <span class="ml-1">Github</span>
         </Button>
-        <Button
-          text="Close"
-          type="secondary"
-          @click.prevent="toggleOptions(false)"
-        />
+        <Button text="Close" type="secondary" @click.prevent="toggleOptions(false)" />
       </ActionSheet>
     </template>
     <template #drawer>

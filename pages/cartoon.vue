@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { capitalize } from '~/utils/str'
+import { capitalize } from '~/utils/str';
 
 // composable
-const { t } = useLang()
+const { t } = useLang();
 
 // compiler macro
 definePageMeta({
   layout: 'page',
-})
+});
 useHead(() => ({
   title: capitalize(t('pages.cartoon.title')),
   meta: [
@@ -16,7 +16,7 @@ useHead(() => ({
       content: t('pages.cartoon.description'),
     },
   ],
-}))
+}));
 </script>
 
 <template>

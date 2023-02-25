@@ -1,5 +1,5 @@
-import { createVuetify } from 'vuetify'
-import { en, id, ja, ko, vi, zhHans } from 'vuetify/locale'
+import { createVuetify } from 'vuetify';
+import { en, id, ja, ko, vi, zhHans } from 'vuetify/locale';
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       fallback: 'en',
       messages: { vi, ja, en, id, ko, zhHans },
     },
-  })
+  });
 
-  nuxtApp.vueApp.use(vuetify)
-})
+  nuxtApp.vueApp.use(vuetify);
+});

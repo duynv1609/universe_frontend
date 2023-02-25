@@ -5,8 +5,8 @@ import {
   ListboxLabel,
   ListboxOptions,
   ListboxOption,
-} from '@headlessui/vue'
-import { IThemeSettingOptions, availableThemes } from '~/utils/theme'
+} from '@headlessui/vue';
+import { IThemeSettingOptions, availableThemes } from '~/utils/theme';
 
 // micro compiler
 const props = defineProps({
@@ -14,11 +14,11 @@ const props = defineProps({
     type: String,
     default: 'dropdown-right-top',
   },
-})
+});
 
 // state
-const themeSetting = useState<IThemeSettingOptions>('theme.setting')
-const currentStyle = toRef(props, 'type')
+const themeSetting = useState<IThemeSettingOptions>('theme.setting');
+const currentStyle = toRef(props, 'type');
 </script>
 
 <template>
@@ -53,10 +53,8 @@ const currentStyle = toRef(props, 'type')
           :value="theme.key"
           :class="{
             'py-2 px-2 flex items-center cursor-pointer': true,
-            'text-sky-500 bg-gray-100 dark:bg-gray-600/30':
-              themeSetting === theme.key,
-            'hover:bg-gray-50 dark:hover:bg-gray-700/30':
-              themeSetting !== theme.key,
+            'text-sky-500 bg-gray-100 dark:bg-gray-600/30': themeSetting === theme.key,
+            'hover:bg-gray-50 dark:hover:bg-gray-700/30': themeSetting !== theme.key,
           }"
         >
           <span class="text-sm mr-2 flex items-center">
@@ -74,11 +72,7 @@ const currentStyle = toRef(props, 'type')
       v-model="themeSetting"
       class="w-full px-2 pr-3 py-1 outline-none rounded border bg-transparent text-gray-700 dark:text-gray-300 border-gray-900/10 dark:border-gray-50/[0.2]"
     >
-      <option
-        v-for="theme in availableThemes"
-        :key="theme.key"
-        :value="theme.key"
-      >
+      <option v-for="theme in availableThemes" :key="theme.key" :value="theme.key">
         {{ theme.text }}
       </option>
     </select>

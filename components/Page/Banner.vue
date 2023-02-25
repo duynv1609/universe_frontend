@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 const breakpoints = {
   0: {
     items: 1,
@@ -16,27 +16,18 @@ const breakpoints = {
     itemsToShow: 1.5,
     snapAlign: 'center',
   },
-}
+};
 </script>
 
 <template>
-  <Carousel
-    snap-align="center"
-    :autoplay="5000"
-    :wrap-around="true"
-    :breakpoints="breakpoints"
-  >
+  <Carousel snap-align="center" :autoplay="5000" :wrap-around="true" :breakpoints="breakpoints">
     <Slide :key="slide">
       <div class="slider-info banner-view">
-        <img
-          src="https://www.themoviedb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg"
-        />
+        <img src="https://www.themoviedb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg" />
         <div class="banner-info">
           <h3>Test Test</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-              class="over-para"
-            >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="over-para">
               Consequuntur hic odio voluptatem tenetur consequatur.</span
             >
           </p>
@@ -72,15 +63,11 @@ const breakpoints = {
     </Slide>
     <Slide :key="slide">
       <div class="slider-info banner-view">
-        <img
-          src="https://www.themoviedb.org/t/p/original/93SxdkiR3gBcbG5FxIt0DCBttul.jpg"
-        />
+        <img src="https://www.themoviedb.org/t/p/original/93SxdkiR3gBcbG5FxIt0DCBttul.jpg" />
         <div class="banner-info">
           <h3>Test Test</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-              class="over-para"
-            >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="over-para">
               Consequuntur hic odio voluptatem tenetur consequatur.</span
             >
           </p>
@@ -116,15 +103,11 @@ const breakpoints = {
     </Slide>
     <Slide :key="slide">
       <div class="slider-info banner-view">
-        <img
-          src="https://www.themoviedb.org/t/p/original/jLH03sLbkAGxrThdW6b2lrwwE4X.jpg"
-        />
+        <img src="https://www.themoviedb.org/t/p/original/jLH03sLbkAGxrThdW6b2lrwwE4X.jpg" />
         <div class="banner-info">
           <h3>Test Test</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-              class="over-para"
-            >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="over-para">
               Consequuntur hic odio voluptatem tenetur consequatur.</span
             >
           </p>

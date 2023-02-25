@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'dashboard',
-})
+});
 
 export interface TableItem {
-  name: string
-  calories: string
+  name: string;
+  calories: string;
 }
 
 useMeta({
   title: 'Tổng quan',
-})
+});
 
 const items = computed((): TableItem[] => [
   {
@@ -33,7 +33,7 @@ const items = computed((): TableItem[] => [
     name: 'Gingerbread',
     calories: '356',
   },
-])
+]);
 </script>
 
 <template>
@@ -95,9 +95,7 @@ const items = computed((): TableItem[] => [
             <v-flex>
               <v-card-title
                 >5 210
-                <v-icon class="pl-30" color="#2f80ed"
-                  >mdi-account-eye-outline</v-icon
-                >
+                <v-icon class="pl-30" color="#2f80ed">mdi-account-eye-outline</v-icon>
               </v-card-title>
             </v-flex>
           </v-card>
@@ -112,9 +110,7 @@ const items = computed((): TableItem[] => [
             <v-flex>
               <v-card-title
                 >5 210
-                <v-icon class="pl-30" color="#2f80ed"
-                  >mdi-database-eye-outline</v-icon
-                >
+                <v-icon class="pl-30" color="#2f80ed">mdi-database-eye-outline</v-icon>
               </v-card-title>
             </v-flex>
           </v-card>
@@ -135,9 +131,7 @@ const items = computed((): TableItem[] => [
               ></v-btn>
               TOP PHIM
               <v-spacer></v-spacer>
-              <NuxtLink to="#" class="view-more-custom d-block mr-2">
-                Xem thêm
-              </NuxtLink>
+              <NuxtLink to="#" class="view-more-custom d-block mr-2"> Xem thêm </NuxtLink>
             </v-toolbar>
             <v-divider></v-divider>
             <v-table class="v-table-custom-color">
@@ -169,9 +163,7 @@ const items = computed((): TableItem[] => [
               ></v-btn>
               PHIM MỚI
               <v-spacer></v-spacer>
-              <NuxtLink to="#" class="view-more-custom d-block mr-2">
-                Xem thêm
-              </NuxtLink>
+              <NuxtLink to="#" class="view-more-custom d-block mr-2"> Xem thêm </NuxtLink>
             </v-toolbar>
             <v-divider></v-divider>
             <v-table class="v-table-custom-color">
@@ -196,16 +188,10 @@ const items = computed((): TableItem[] => [
         <v-col cols="6">
           <v-card class="mx-auto" max-width="600">
             <v-toolbar color="#151f30">
-              <v-btn
-                class="icon-color-custom"
-                variant="text"
-                icon="mdi-eye-check-outline"
-              ></v-btn>
+              <v-btn class="icon-color-custom" variant="text" icon="mdi-eye-check-outline"></v-btn>
               SỐ LƯỢT XEM
               <v-spacer></v-spacer>
-              <NuxtLink to="#" class="view-more-custom d-block mr-2">
-                Xem thêm
-              </NuxtLink>
+              <NuxtLink to="#" class="view-more-custom d-block mr-2"> Xem thêm </NuxtLink>
             </v-toolbar>
             <v-divider></v-divider>
             <v-table class="v-table-custom-color">
@@ -230,17 +216,11 @@ const items = computed((): TableItem[] => [
         <v-col cols="6">
           <v-card class="mx-auto" max-width="600">
             <v-toolbar color="#151f30">
-              <v-btn
-                class="icon-color-custom"
-                variant="text"
-                icon="mdi-star-outline"
-              ></v-btn
-              >ĐÁNH GIÁ
+              <v-btn class="icon-color-custom" variant="text" icon="mdi-star-outline"></v-btn>ĐÁNH
+              GIÁ
 
               <v-spacer></v-spacer>
-              <NuxtLink to="#" class="view-more-custom d-block mr-2">
-                Xem thêm
-              </NuxtLink>
+              <NuxtLink to="#" class="view-more-custom d-block mr-2"> Xem thêm </NuxtLink>
             </v-toolbar>
             <v-divider></v-divider>
             <v-table class="v-table-custom-color">
