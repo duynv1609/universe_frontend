@@ -6,11 +6,7 @@
       <v-theme-provider :theme="theme">
         <v-locale-provider :locale="vuetifyLocale">
           <NuxtLayout>
-            <NuxtLoadingIndicator
-              :height="5"
-              :duration="3000"
-              :throttle="400"
-            />
+            <NuxtLoadingIndicator :height="5" :duration="3000" :throttle="400" />
             <NuxtPage />
           </NuxtLayout>
         </v-locale-provider>
@@ -20,15 +16,15 @@
 </template>
 
 <script lang="ts" setup>
-import { AppSetup } from './utils/app'
-import { ITheme } from './utils/theme'
-import { getVuetifyLocale } from '~/utils/lang'
+import { AppSetup } from './utils/app';
+import { ITheme } from './utils/theme';
+import { getVuetifyLocale } from '~/utils/lang';
 
-AppSetup()
-const theme = useState<ITheme>('theme.current')
-const locale = useState<string>('locale.setting')
-const app = useAppConfig()
-const vuetifyLocale = computed(() => getVuetifyLocale(locale.value))
+AppSetup();
+const theme = useState<ITheme>('theme.current');
+const locale = useState<string>('locale.setting');
+const app = useAppConfig();
+const vuetifyLocale = computed(() => getVuetifyLocale(locale.value));
 
 useHead({
   title: app.name,
@@ -42,5 +38,5 @@ useHead({
     },
   ],
   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
-})
+});
 </script>

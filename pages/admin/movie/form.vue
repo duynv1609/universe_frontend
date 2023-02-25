@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'dashboard',
-})
+});
 
 useMeta({
   title: 'Thêm mới phim',
-})
+});
 </script>
 <script lang="ts">
 export default {
@@ -15,22 +15,22 @@ export default {
       dialogStatus: false,
       url: null,
       newImage: null,
-    }
+    };
   },
   methods: {
     previewFiles(event) {
-      const file = event.target.files[0]
+      const file = event.target.files[0];
 
-      const theReader = new FileReader()
+      const theReader = new FileReader();
       // Nhớ sử dụng async/await để chờ khi đã convert thành công image sang base64 thì mới bắt đầu gán cho biến newImage
       // đây là 1 kinh nghiệm của mình khi upload multiple ảnh
       theReader.onloadend = async () => {
-        this.newImage = await theReader.result
-      }
-      theReader.readAsDataURL(file)
+        this.newImage = await theReader.result;
+      };
+      theReader.readAsDataURL(file);
     },
   },
-}
+};
 </script>
 
 <template>
@@ -53,9 +53,7 @@ export default {
               <v-row>
                 <v-col md="12" sm="6">
                   <div class="form__img">
-                    <label for="form__img-upload"
-                      >Upload cover (190 x 270)</label
-                    >
+                    <label for="form__img-upload">Upload cover (190 x 270)</label>
                     <input
                       id="form__img-upload"
                       name="form__img-upload"
@@ -73,11 +71,7 @@ export default {
               <v-row>
                 <v-col cols="12">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Title"
-                    />
+                    <input type="text" class="form__input" placeholder="Title" />
                   </div>
                 </v-col>
 
@@ -94,21 +88,13 @@ export default {
 
                 <v-col sm="6" lg="3">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Release year"
-                    />
+                    <input type="text" class="form__input" placeholder="Release year" />
                   </div>
                 </v-col>
 
                 <v-col sm="6" lg="3">
                   <div class="form__group">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="Running timed in minutes"
-                    />
+                    <input type="text" class="form__input" placeholder="Running timed in minutes" />
                   </div>
                 </v-col>
 
@@ -130,9 +116,7 @@ export default {
 
                 <v-col cols="12">
                   <div class="form__gallery">
-                    <label id="gallery1" for="form__gallery-upload"
-                      >Upload photos</label
-                    >
+                    <label id="gallery1" for="form__gallery-upload">Upload photos</label>
                     <v-file-input
                       id="form__gallery-upload"
                       data-name="#gallery1"
@@ -167,9 +151,7 @@ export default {
               <v-row>
                 <v-col cols="12" lg="6">
                   <div class="form__video">
-                    <label id="movie1" for="form__video-upload"
-                      >Upload video</label
-                    >
+                    <label id="movie1" for="form__video-upload">Upload video</label>
                     <input
                       id="form__video-upload"
                       data-name="#movie1"
@@ -183,11 +165,7 @@ export default {
 
                 <v-col lg="6">
                   <div class="form__group form__group--link">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="or add a link"
-                    />
+                    <input type="text" class="form__input" placeholder="or add a link" />
                   </div>
                 </v-col>
 

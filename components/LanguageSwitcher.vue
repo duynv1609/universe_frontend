@@ -5,8 +5,8 @@ import {
   ListboxLabel,
   ListboxOptions,
   ListboxOption,
-} from '@headlessui/vue'
-import { availableLocales } from '~/utils/lang'
+} from '@headlessui/vue';
+import { availableLocales } from '~/utils/lang';
 
 // micro compiler
 const props = defineProps({
@@ -14,11 +14,11 @@ const props = defineProps({
     type: String,
     default: 'dropdown-right-top',
   },
-})
+});
 
 // state
-const currentStyle = toRef(props, 'type')
-const localeSetting = useState<string>('locale.setting')
+const currentStyle = toRef(props, 'type');
+const localeSetting = useState<string>('locale.setting');
 </script>
 
 <template>
@@ -30,11 +30,7 @@ const localeSetting = useState<string>('locale.setting')
       class="relative flex items-center"
     >
       <ListboxLabel class="sr-only">Theme</ListboxLabel>
-      <ListboxButton
-        type="button"
-        title="Change Language"
-        class="transition-colors duration-300"
-      >
+      <ListboxButton type="button" title="Change Language" class="transition-colors duration-300">
         <span class="justify-center items-center flex">
           <IconLa:language />
         </span>
@@ -48,10 +44,8 @@ const localeSetting = useState<string>('locale.setting')
           :value="lang.iso"
           :class="{
             'py-2 px-2 flex items-center cursor-pointer': true,
-            'text-sky-500 bg-gray-100 dark:bg-gray-600/30':
-              localeSetting === lang.iso,
-            'hover:bg-gray-50 dark:hover:bg-gray-700/30':
-              localeSetting !== lang.iso,
+            'text-sky-500 bg-gray-100 dark:bg-gray-600/30': localeSetting === lang.iso,
+            'hover:bg-gray-50 dark:hover:bg-gray-700/30': localeSetting !== lang.iso,
           }"
         >
           <span class="text-sm mr-2">

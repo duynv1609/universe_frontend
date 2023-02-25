@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
 const breakpoints = {
   // 700px and up
@@ -13,7 +13,7 @@ const breakpoints = {
     itemsToShow: 6,
     snapAlign: 'start',
   },
-}
+};
 
 const breakpointsCartoon = {
   // 700px and up
@@ -26,7 +26,7 @@ const breakpointsCartoon = {
     itemsToShow: 3,
     snapAlign: 'start',
   },
-}
+};
 
 // composable
 // const { t } = useLang()
@@ -34,7 +34,7 @@ const breakpointsCartoon = {
 // meta
 definePageMeta({
   layout: 'page',
-})
+});
 
 // vars
 // const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'))
@@ -73,6 +73,8 @@ definePageMeta({
 //   const tt = document.querySelector('.tooltiptext')
 //   if (tt) tt.innerHTML = `Copied!!!`
 // }
+
+const { data: genresList } = useGetGenresList();
 </script>
 
 <template>
@@ -336,11 +338,7 @@ definePageMeta({
           <h1 class="text-h4">PHIM LẺ</h1>
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
-        <Carousel
-          :items-to-show="6"
-          :wrap-around="true"
-          :breakpoints="breakpoints"
-        >
+        <Carousel :items-to-show="6" :wrap-around="true" :breakpoints="breakpoints">
           <Slide :key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
@@ -928,11 +926,7 @@ definePageMeta({
           <h1 class="text-h4">PHIM HOẠT HÌNH</h1>
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
-        <Carousel
-          :items-to-show="3"
-          :wrap-around="true"
-          :breakpoints="breakpointsCartoon"
-        >
+        <Carousel :items-to-show="3" :wrap-around="true" :breakpoints="breakpointsCartoon">
           <Slide :key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
@@ -966,9 +960,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1005,9 +997,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1044,9 +1034,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1083,9 +1071,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1122,9 +1108,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1161,9 +1145,7 @@ definePageMeta({
                 </svg>
               </a>
               <h3 class="live__title">
-                <a href="" class="open-video"
-                  >Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a
-                >
+                <a href="" class="open-video">Nữ Hoàng Băng Giá 2 - Frozen II (2019)</a>
               </h3>
             </div>
           </Slide>
@@ -1174,6 +1156,8 @@ definePageMeta({
       </v-col>
     </v-row>
   </v-container>
+
+  {{ genresList }}
   <!-- end phim hoat hinh -->
 </template>
 
@@ -1257,11 +1241,7 @@ definePageMeta({
   -webkit-text-fill-color: transparent;
   padding-left: $padding;
   padding-right: $padding;
-  background-image: linear-gradient(
-    90deg,
-    var(--start-color),
-    var(--end-color)
-  );
+  background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
   position: relative;
   opacity: 0;
   z-index: 1;

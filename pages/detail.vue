@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 // import { capitalize } from '~/utils/str'
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 // import dialog from 'vite-plugin-vuetify'
 
 // composable
-const { t } = useLang()
+const { t } = useLang();
 
 // compiler macro
 definePageMeta({
   layout: 'page',
-})
+});
 useHead(() => ({
   title: 'Chi tiết',
   meta: [
@@ -19,7 +19,7 @@ useHead(() => ({
       content: t('pages.detail.description'),
     },
   ],
-}))
+}));
 
 const breakpoints = {
   // 700px and up
@@ -32,7 +32,7 @@ const breakpoints = {
     itemsToShow: 6,
     snapAlign: 'start',
   },
-}
+};
 </script>
 
 <template>
@@ -105,11 +105,10 @@ const breakpoints = {
                 </ul>
 
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  It is a long established fact that a reader will be distracted by the readable
+                  content of a page when looking at its layout. The point of using Lorem Ipsum is
+                  that it has a more-or-less normal distribution of letters, as opposed to using
+                  'Content here, content here', making it look like readable English.
                 </p>
               </div>
               <!-- end article content -->
@@ -158,11 +157,7 @@ const breakpoints = {
                     Danh sách phát
                   </h3>
                 </div>
-                <Carousel
-                  :items-to-show="3"
-                  :wrap-around="true"
-                  :breakpoints="breakpointsCartoon"
-                >
+                <Carousel :items-to-show="3" :wrap-around="true" :breakpoints="breakpointsCartoon">
                   <Slide :key="slide">
                     <div class="live">
                       <a href="" class="live__cover open-video">
@@ -242,11 +237,7 @@ const breakpoints = {
           <div class="d-flex align-center justify-between">
             <h1 class="text-h4">Phim gợi ý</h1>
           </div>
-          <Carousel
-            :items-to-show="6"
-            :wrap-around="true"
-            :breakpoints="breakpoints"
-          >
+          <Carousel :items-to-show="6" :wrap-around="true" :breakpoints="breakpoints">
             <Slide :key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
