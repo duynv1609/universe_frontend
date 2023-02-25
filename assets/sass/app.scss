@@ -958,3 +958,7 @@ html.dark {
 .v-card {
   border-radius: 16px !important;
 }
+
+.form__input:focus-visible {
+  outline: none !important;
+}

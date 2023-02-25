@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 useMeta({
-  title: 'Thêm mới phim',
+  title: 'Movie',
 })
 </script>
 <script lang="ts">
@@ -40,7 +40,7 @@ export default {
       <!-- main title -->
       <v-col cols="12">
         <div class="main__title">
-          <h2>Thêm mới phim</h2>
+          <h2>Movie</h2>
         </div>
       </v-col>
 
@@ -49,50 +49,105 @@ export default {
       <v-col cols="12">
         <form action="#" class="form">
           <v-row>
-            <v-col md="3" class="form__cover">
+            <!-- name -->
+            <v-col md="6" class="form__content">
               <v-row>
-                <v-col md="12" sm="6">
-                  <div class="form__img">
-                    <label for="form__img-upload"
-                      >Upload cover (190 x 270)</label
-                    >
-                    <input
-                      id="form__img-upload"
-                      name="form__img-upload"
-                      type="file"
-                      accept=".png, .jpg, .jpeg"
-                      @change="previewFiles($event)"
-                    />
-                    <img id="form__img" :src="newImage || ''" alt=" " />
+                <v-col cols="12">
+                  <div class="form__group">
+                    <input type="text" class="form__input" placeholder="Name" />
                   </div>
                 </v-col>
               </v-row>
             </v-col>
-
-            <v-col md="9" class="form__content">
+            <v-col md="6" class="form__content">
               <v-row>
                 <v-col cols="12">
                   <div class="form__group">
                     <input
                       type="text"
                       class="form__input"
-                      placeholder="Title"
+                      placeholder="Name En"
                     />
                   </div>
                 </v-col>
+              </v-row>
+            </v-col>
+            <!-- end name -->
 
+            <v-col md="12" class="form__content">
+              <v-row>
+                <!-- slug -->
                 <v-col cols="12">
+                  <div class="form__group">
+                    <input type="text" class="form__input" placeholder="Slug" />
+                  </div>
+                </v-col>
+                <!-- end slug -->
+
+                <!-- poster link -->
+                <v-col cols="12">
+                  <v-row>
+                    <v-col cols="12" lg="6">
+                      <div class="form__group form__group--link">
+                        <input
+                          type="text"
+                          class="form__input"
+                          placeholder="Poster link"
+                        />
+                      </div>
+                    </v-col>
+
+                    <v-col lg="6">
+                      <div class="form__group form__group--link">
+                        <input
+                          type="text"
+                          class="form__input"
+                          placeholder="Backdrop link"
+                        />
+                      </div>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <!-- end poster link -->
+
+                <!-- trailer url -->
+                <v-col cols="12">
+                  <div class="form__group">
+                    <input
+                      type="text"
+                      class="form__input"
+                      placeholder="Trailer url"
+                    />
+                  </div>
+                </v-col>
+                <!-- end trailer url -->
+
+                <!-- description -->
+                <v-col cols="6">
                   <div class="form__group">
                     <textarea
                       id="text"
                       name="text"
-                      class="form__textarea"
+                      class="form__textarea form__input"
                       placeholder="Description"
                     ></textarea>
                   </div>
                 </v-col>
 
-                <v-col sm="6" lg="3">
+                <v-col cols="6">
+                  <div class="form__group">
+                    <textarea
+                      id="text"
+                      name="text"
+                      class="form__textarea form__input"
+                      placeholder="Description En"
+                    ></textarea>
+                  </div>
+                </v-col>
+                <!-- end description -->
+
+                <!-- release year -->
+                <v-col sm="4" lg="4">
                   <div class="form__group">
                     <input
                       type="text"
@@ -101,98 +156,106 @@ export default {
                     />
                   </div>
                 </v-col>
+                <!-- end release year -->
 
-                <v-col sm="6" lg="3">
+                <!-- duration -->
+                <v-col sm="4" lg="4">
                   <div class="form__group">
                     <input
                       type="text"
                       class="form__input"
-                      placeholder="Running timed in minutes"
+                      placeholder="Duration"
                     />
                   </div>
                 </v-col>
+                <!-- end duration -->
 
-                <v-col sm="6" lg="3">
+                <!-- episode -->
+                <v-col sm="4" lg="4">
+                  <div class="form__group">
+                    <input
+                      type="text"
+                      class="form__input"
+                      placeholder="Episode"
+                    />
+                  </div>
+                </v-col>
+                <!-- end episode -->
+
+                <!-- country -->
+                <v-col sm="4" lg="4">
                   <div class="form__group">
                     <v-select
-                      label="Chất lượng"
+                      label="Country"
+                      :items="['FullHD', 'HD']"
+                      variant="solo"
+                    ></v-select>
+                  </div>
+                </v-col>
+                <!-- end country -->
+                <v-col sm="4" lg="4">
+                  <div class="form__group">
+                    <v-select
+                      label="Quality"
                       :items="['FullHD', 'HD']"
                       variant="solo"
                     ></v-select>
                   </div>
                 </v-col>
 
-                <v-col sm="6" lg="3">
+                <!-- language -->
+                <v-col sm="4" lg="4">
                   <div class="form__group">
-                    <input type="text" class="form__input" placeholder="Age" />
+                    <v-select
+                      label="Language"
+                      :items="['FullHD', 'HD']"
+                      variant="solo"
+                    ></v-select>
                   </div>
                 </v-col>
-
-                <v-col cols="12">
-                  <div class="form__gallery">
-                    <label id="gallery1" for="form__gallery-upload"
-                      >Upload photos</label
-                    >
-                    <v-file-input
-                      id="form__gallery-upload"
-                      data-name="#gallery1"
-                      name="gallery"
-                      class="form__gallery-upload"
-                      type="file"
-                      accept=".png, .jpg, .jpeg"
-                      show-size
-                      label="File input"
-                    ></v-file-input>
-                  </div>
-                </v-col>
+                <!-- end language -->
               </v-row>
             </v-col>
+
+            <!-- status -->
             <v-col cols="12">
               <ul class="form__radio">
                 <li>
-                  <span>Item type:</span>
+                  <span>Status:</span>
                 </li>
                 <li>
                   <input id="type1" type="radio" name="type" checked="" />
-                  <label for="type1">Movie</label>
+                  <label for="type1">Public</label>
                 </li>
                 <li>
                   <input id="type2" type="radio" name="type" />
-                  <label for="type2">TV Show</label>
+                  <label for="type2">Draft</label>
                 </li>
               </ul>
             </v-col>
+            <!-- end status -->
 
             <v-col cols="12">
               <v-row>
-                <v-col cols="12" lg="6">
-                  <div class="form__video">
-                    <label id="movie1" for="form__video-upload"
-                      >Upload video</label
-                    >
-                    <input
-                      id="form__video-upload"
-                      data-name="#movie1"
-                      name="movie"
-                      class="form__video-upload"
-                      type="file"
-                      accept="video/mp4,video/x-m4v,video/*"
-                    />
-                  </div>
+                <v-col cols="6">
+                  <v-row>
+                    <v-col sm="6" lg="3">
+                      <div class="form__group">
+                        <v-btn size="large" color="success"> save </v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
                 </v-col>
-
-                <v-col lg="6">
-                  <div class="form__group form__group--link">
-                    <input
-                      type="text"
-                      class="form__input"
-                      placeholder="or add a link"
-                    />
-                  </div>
-                </v-col>
-
-                <v-col cols="12">
-                  <button type="button" class="form__btn">publish</button>
+                <v-col cols="6">
+                  <v-row justify="end">
+                    <v-col sm="6" lg="4">
+                      <div class="form__group">
+                        <v-btn size="large" color="warning">
+                          Add Episode
+                        </v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
                 </v-col>
               </v-row>
             </v-col>

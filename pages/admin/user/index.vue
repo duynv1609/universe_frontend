@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 useMeta({
-  title: 'Danh sách người dùng',
+  title: 'User List',
 })
 </script>
 <script lang="ts">
@@ -38,7 +38,7 @@ export default {
     <!-- main title -->
     <v-col cols="12">
       <div class="main__title">
-        <h2>Danh sách người dùng</h2>
+        <h2>User List</h2>
       </div>
     </v-col>
   </v-row>

@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
 })
 useMeta({
-  title: 'Danh sách phim',
+  title: 'Movie List',
 })
 </script>
 <script lang="ts">
@@ -22,7 +22,7 @@ export default {
       <v-col cols="12">
         <!-- main title -->
         <div class="main__title">
-          <h2>Catalog</h2>
+          <h2>Movie List</h2>
 
           <span class="main__title-stat">14 452 total</span>
 

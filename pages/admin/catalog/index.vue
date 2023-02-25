@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
 })
 useMeta({
-  title: 'Danh sách thể loại',
+  title: 'Catalog List',
 })
 </script>
 <script lang="ts">
@@ -37,7 +37,7 @@ export default {
     <!-- main title -->
     <v-col cols="12">
       <div class="main__title">
-        <h2>Danh sách thể loại</h2>
+        <h2>Catalog List</h2>
       </div>
     </v-col>
   </v-row>
