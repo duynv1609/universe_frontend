@@ -9,7 +9,7 @@ export interface TableItem {
 }
 
 useMeta({
-  title: 'Tổng quan',
+  title: 'Dashboard',
 });
 
 const items = computed((): TableItem[] => [
