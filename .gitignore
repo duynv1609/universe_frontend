@@ -19,3 +19,5 @@ dist
 # dev
 .original
 .pnpm-store
+pnpm-lock.yaml
+.env.development
