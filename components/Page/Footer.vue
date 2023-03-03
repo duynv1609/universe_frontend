@@ -12,7 +12,7 @@ const app = useAppConfig();
           </div>
           <p class="footer__tagline pt-4">
             Vũ Trụ Phim, <br />
-            Website phim cho cả vũ trụ.
+            Website phim vũ trụ.
           </p>
           <div class="footer__social pt-4 d-flex">
             <a href="#" target="_blank" class="pr-3"

@@ -21,55 +21,55 @@ export default defineComponent({
   data: () => ({
     items: [
       {
-        title: 'Thể Loại',
+        title: 'Catalog',
         active: true,
         icon: 'mdi-tag-outline',
         value: 'catalog',
         items: [
           {
             action: '/admin/catalog/form',
-            title: 'Thêm mới',
+            title: 'Add new',
             icon: 'mdi-playlist-plus',
           },
           {
             action: '/admin/catalog',
-            title: 'Danh sách',
+            title: 'List',
             icon: 'mdi-list-box-outline',
           },
         ],
       },
       {
-        title: 'Phim',
+        title: 'Movie',
         active: true,
         icon: 'mdi-movie-open',
         value: 'movie',
         items: [
           {
             action: '/admin/movie/form',
-            title: 'Thêm mới',
+            title: 'Add new',
             icon: 'mdi-playlist-plus',
           },
           {
             action: '/admin/movie',
-            title: 'Danh sách',
+            title: 'List',
             icon: 'mdi-list-box-outline',
           },
         ],
       },
       {
-        title: 'Người Dùng',
+        title: 'User',
         active: true,
         icon: 'mdi-account-group',
         value: 'user',
         items: [
           {
             action: '/admin/user/form',
-            title: 'Thêm mới',
+            title: 'Add new',
             icon: 'mdi-playlist-plus',
           },
           {
             action: '/admin/user',
-            title: 'Danh sách',
+            title: 'List',
             icon: 'mdi-list-box-outline',
           },
         ],
@@ -114,7 +114,7 @@ export default defineComponent({
         </div>
       </v-list-item>
 
-      <v-list-item prepend-icon="mdi-home" title="Tổng Quan" to="/admin"></v-list-item>
+      <v-list-item prepend-icon="mdi-home" title="Dashboard" to="/admin"></v-list-item>
 
       <v-list-group
         v-for="item in items"
