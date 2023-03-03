@@ -4,6 +4,8 @@
 
 
 Nuxt's goal is to make web development intuitive and performant, with a great developer experience.<br>Learn more in the ['What is Nuxt?'](https://nuxt.com/docs/category/introduction) section of our documentation.
+
+Movie original theme: https://github.com/duynv1609/Movie-Theme-FlixGo
 ## Project setup
 ### Cach 1
 #### install dependencies
