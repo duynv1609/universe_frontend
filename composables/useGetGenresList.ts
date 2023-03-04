@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/vue-query';
 import { type MaybeRef, get } from '@vueuse/core';
+import { LanguageManager } from '~/utils/lang';
 
 import { QUERIES } from '~/constants';
 import type { AppResponse, GenresModel, QueryOptions } from '~/models';
@@ -8,9 +9,8 @@ type Response = AppResponse<GenresModel[]>;
 type Options = {
   query?: MaybeRef<string>;
 } & QueryOptions<Response, unknown, Response, (string | MaybeRef<string> | undefined)[]>;
-
 function endpoint(query?: string) {
-  return `genres?${query || ''}`;
+  return `genres?lang=${LanguageManager().localeSetting.value}&${query || ''}`;
 }
 
 export function useGetGenresList(options?: Options) {
