@@ -1,7 +1,18 @@
 export interface GenresModel {
-  id: string;
+  id: number;
   slug: string;
   name: {
     vi: string;
+    en: string;
   };
+  children: [
+    {
+      id: number;
+      slug: string;
+      name: {
+        vi: string;
+        en: string;
+      };
+    }
+  ];
 }
