@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const app = useAppConfig();
+const { data: genreList } = useGetGenresList();
 </script>
 
 <template>
@@ -14,6 +15,7 @@ const app = useAppConfig();
             Vũ Trụ Phim, <br />
             Website phim vũ trụ.
           </p>
+          <!-- {{ genreList }} -->
           <div class="footer__social pt-4 d-flex">
             <a href="#" target="_blank" class="pr-3"
               ><svg
@@ -76,53 +78,47 @@ const app = useAppConfig();
           </div>
         </div>
 
-        <div class="v-col-12 v-col-sm-8 v-col-md-6 v-col-lg-4 v-col-xl-3">
-          <div class="v-row">
+        <div
+          v-for="(genre, i) in genreList?.data"
+          :key="i"
+          class="v-col-12 v-col-sm-8 v-col-md-6 v-col-lg-4 v-col-xl-3"
+        >
+          <div v-if="genre.slug === 'genre'" class="v-row">
             <div class="v-col-12">
-              <h3 class="footer__title">Thể Loại</h3>
+              <h3 class="footer__title uppercase transition-colors duration-300 text-capitalize">
+                {{ genre.name }}
+              </h3>
             </div>
 
-            <div class="v-col-6">
+            <div v-for="index in 8" :key="index" class="v-col-6 columns-2">
               <div class="footer__nav">
-                <a href="" class="v-list-item">Hành Động</a>
-                <a href="" class="v-list-item">Tâm Lý</a>
-                <a href="" class="v-list-item">Tình Cảm</a>
-                <a href="" class="v-list-item">Hài Hước</a>
-              </div>
-            </div>
-
-            <div class="v-col-6">
-              <div class="footer__nav">
-                <a href="" class="v-list-item">Kinh Dị</a>
-                <a href="" class="v-list-item">Viễn Tưởng</a>
-                <a href="" class="v-list-item">Võ Thuật</a>
-                <a href="" class="v-list-item">Chính Kịch</a>
+                <Anchor
+                  :to="genre.children[index].slug"
+                  class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 v-list-item"
+                >
+                  <span class="d-flex align-center">
+                    {{ genre.children[index].name }}
+                  </span>
+                </Anchor>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="v-col-12 v-col-sm-8 v-col-md-6 v-col-lg-4 v-col-xl-3">
-          <div class="v-row">
+          <div v-if="genre.slug === 'nation'" class="v-row">
             <div class="v-col-12">
-              <h3 class="footer__title">Quốc Gia</h3>
+              <h3 class="footer__title uppercase transition-colors duration-300 text-capitalize">
+                {{ genre.name }}
+              </h3>
             </div>
-
-            <div class="v-col-6">
+            <div v-for="index in 8" :key="index" class="v-col-6 columns-2">
               <div class="footer__nav">
-                <a href="" class="v-list-item">Việt Nam</a>
-                <a href="" class="v-list-item">Trung Quốc</a>
-                <a href="" class="v-list-item">Hàn Quốc</a>
-                <a href="" class="v-list-item">Nhật Bản</a>
-              </div>
-            </div>
-
-            <div class="v-col-6">
-              <div class="footer__nav">
-                <a href="" class="v-list-item">Âu Mỹ</a>
-                <a href="" class="v-list-item">Ấn Độ</a>
-                <a href="" class="v-list-item">Thái Lan</a>
-                <a href="" class="v-list-item">Hồng Kông</a>
+                <Anchor
+                  :to="genre.children[index].slug"
+                  class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 v-list-item"
+                >
+                  <span class="d-flex align-center">
+                    {{ genre.children[index].name }}
+                  </span>
+                </Anchor>
               </div>
             </div>
           </div>
