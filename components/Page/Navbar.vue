@@ -70,12 +70,13 @@ const currentStyle = toRef(props, 'type');
                     class="transition-colors duration-300 flex align-center"
                   >
                     <span
-                      class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 uppercase"
+                      class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 uppercase ml-8"
                       >{{ item.name }}
                     </span>
                     <DotIcon class="dot-toggle-svg" />
                   </ListboxButton>
                   <ListboxOptions
+                    v-if="item.children.length > 0"
                     class="columns-3 w-125 p-1 absolute z-50 top-full left-0 outline-none bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 text-sm text-gray-700 font-semibold dark:bg-gray-800 dark:ring-0 dark:highlight-white/5 dark:text-gray-300"
                   >
                     <ListboxOption
@@ -83,15 +84,15 @@ const currentStyle = toRef(props, 'type');
                       :key="child.id"
                       :value="child.id"
                       :class="{
-                        'flex items-center cursor-pointer': true,
+                        'flex items-center cursor-pointer pl-5': true,
                       }"
                     >
                       <Anchor
                         :to="child.slug !== 'genre' ? child.slug : 'genre'"
-                        class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 p-2 mr-10 d-block"
+                        class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 p-2 d-block"
                       >
                         <span class="d-flex align-center">
-                          {{ child.name.vi }}
+                          {{ child.name }}
                           <SignIcon v-if="child.slug === 'cinema' ? true : false" />
                         </span>
                         <DotIcon
@@ -119,7 +120,7 @@ const currentStyle = toRef(props, 'type');
                 :to="item.slug !== 'genre' ? item.slug : 'genre'"
                 class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 uppercase"
               >
-                <span class="d-flex align-center">
+                <span class="d-flex align-center ml-8">
                   {{ item.name }}
                   <SignIcon v-if="item.slug === 'cinema' ? true : false" />
                 </span>
