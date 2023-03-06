@@ -3,6 +3,10 @@ import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
 const breakpoints = {
+  300: {
+    itemsToShow: 3,
+    snapAlign: 'center',
+  },
   // 700px and up
   700: {
     itemsToShow: 4,
@@ -16,6 +20,10 @@ const breakpoints = {
 };
 
 const breakpointsCartoon = {
+  300: {
+    itemsToShow: 1,
+    snapAlign: 'center',
+  },
   // 700px and up
   700: {
     itemsToShow: 2,
@@ -90,7 +98,7 @@ const { data: genresList } = useGetGenresList();
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
         <v-row>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <NuxtLink to="/detail" class="card__cover">
                 <img
@@ -129,7 +137,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -168,7 +176,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -207,7 +215,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -246,7 +254,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -285,7 +293,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -672,7 +680,7 @@ const { data: genresList } = useGetGenresList();
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
         <v-row>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -712,7 +720,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -752,7 +760,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -792,7 +800,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -832,7 +840,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -872,7 +880,7 @@ const { data: genresList } = useGetGenresList();
               </ul>
             </div>
           </v-col>
-          <v-col cols="2">
+          <v-col xs="2" lg="2" md="3" sm="4">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
