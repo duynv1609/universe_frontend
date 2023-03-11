@@ -3,12 +3,12 @@ definePageMeta({
   layout: 'dashboard',
 });
 
-export interface TableItem {
+interface TableItem {
   name: string;
   calories: string;
 }
 
-useMeta({
+definePageMeta({
   title: 'Dashboard',
 });
 

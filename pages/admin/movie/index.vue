@@ -2,7 +2,7 @@
 definePageMeta({
   layout: 'dashboard',
 });
-useMeta({
+definePageMeta({
   title: 'Movie List',
 });
 </script>

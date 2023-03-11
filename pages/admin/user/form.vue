@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
 });
 
-useMeta({
+definePageMeta({
   title: 'User',
 });
 </script>
@@ -17,19 +17,6 @@ export default {
       newImage: null,
     };
   },
-  methods: {
-    previewFiles(event) {
-      const file = event.target.files[0];
-
-      const theReader = new FileReader();
-      // Nhớ sử dụng async/await để chờ khi đã convert thành công image sang base64 thì mới bắt đầu gán cho biến newImage
-      // đây là 1 kinh nghiệm của mình khi upload multiple ảnh
-      theReader.onloadend = async () => {
-        this.newImage = await theReader.result;
-      };
-      theReader.readAsDataURL(file);
-    },
-  },
 };
 </script>
 
@@ -40,7 +27,7 @@ export default {
       <div class="main__title">
         <h2>User</h2>
       </div>
-      <form action="#" class="form">
+      <!-- <form action="#" class="form">
         <v-row>
           <v-col md="3" class="form__cover">
             <v-row>
@@ -104,7 +91,7 @@ export default {
             <button type="button" class="form__btn">save</button>
           </v-col>
         </v-row>
-      </form>
+      </form> -->
     </v-col>
   </v-row>
 </template>

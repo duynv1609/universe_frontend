@@ -24,6 +24,7 @@ export function useCallApi() {
       baseURL: config.public.BASE_API_URL,
       headers: {
         // authorization: token ? `Bearer ${token}` : '',
+        // lang: ${LanguageManager().localeSetting.value}
         ...opts?.headers,
       },
       ...opts,

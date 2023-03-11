@@ -21,7 +21,7 @@ const breakpoints = {
 
 <template>
   <Carousel snap-align="center" :autoplay="5000" :wrap-around="true" :breakpoints="breakpoints">
-    <Slide :key="slide">
+    <Slide>
       <div class="slider-info banner-view">
         <img src="https://www.themoviedb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg" />
         <div class="banner-info">
@@ -61,7 +61,7 @@ const breakpoints = {
         </div>
       </div>
     </Slide>
-    <Slide :key="slide">
+    <Slide>
       <div class="slider-info banner-view">
         <img src="https://www.themoviedb.org/t/p/original/93SxdkiR3gBcbG5FxIt0DCBttul.jpg" />
         <div class="banner-info">
@@ -101,7 +101,7 @@ const breakpoints = {
         </div>
       </div>
     </Slide>
-    <Slide :key="slide">
+    <Slide>
       <div class="slider-info banner-view">
         <img src="https://www.themoviedb.org/t/p/original/jLH03sLbkAGxrThdW6b2lrwwE4X.jpg" />
         <div class="banner-info">

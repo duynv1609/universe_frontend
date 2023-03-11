@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
 });
 
-useMeta({
+definePageMeta({
   title: 'Movie',
 });
 </script>
@@ -16,19 +16,6 @@ export default {
       url: null,
       newImage: null,
     };
-  },
-  methods: {
-    previewFiles(event) {
-      const file = event.target.files[0];
-
-      const theReader = new FileReader();
-      // Nhớ sử dụng async/await để chờ khi đã convert thành công image sang base64 thì mới bắt đầu gán cho biến newImage
-      // đây là 1 kinh nghiệm của mình khi upload multiple ảnh
-      theReader.onloadend = async () => {
-        this.newImage = await theReader.result;
-      };
-      theReader.readAsDataURL(file);
-    },
   },
 };
 </script>
@@ -184,7 +171,7 @@ export default {
                   <span>Status:</span>
                 </li>
                 <li>
-                  <input id="type1" type="radio" name="type" checked="" />
+                  <input id="type1" type="radio" name="type" />
                   <label for="type1">Public</label>
                 </li>
                 <li>

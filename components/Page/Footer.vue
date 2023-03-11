@@ -15,7 +15,6 @@ const { data: genreList } = useGetGenresList();
             Vũ Trụ Phim, <br />
             Website phim vũ trụ.
           </p>
-          <!-- {{ genreList }} -->
           <div class="footer__social pt-4 d-flex">
             <a href="#" target="_blank" class="pr-3"
               ><svg

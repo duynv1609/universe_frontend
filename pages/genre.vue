@@ -49,23 +49,23 @@ useHead(() => ({
   <v-container class="mt-10">
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Phân loại" dense></v-select>
+        <v-select label="Phân loại" dense></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Tình trạng" dense></v-select>
+        <v-select label="Tình trạng" dense></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Quốc gia" dense></v-select>
+        <v-select label="Quốc gia" dense></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Năm" dense></v-select>
+        <v-select label="Năm" dense></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
-        <v-select :items="items" label="Thể loại" :dense="true" height="10"></v-select>
+        <v-select label="Thể loại" :dense="true" height="10"></v-select>
       </v-col>
 
       <v-col class="d-flex" cols="12" sm="2">
@@ -315,7 +315,7 @@ useHead(() => ({
       </v-col>
     </v-row>
     <div class="text-center mt-15">
-      <v-pagination v-model="page" :length="4" rounded="circle"></v-pagination>
+      <v-pagination :length="4" rounded="circle"></v-pagination>
     </div>
   </v-container>
 </template>

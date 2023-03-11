@@ -21,6 +21,23 @@ useHead(() => ({
   ],
 }));
 
+const breakpointsCartoon = {
+  300: {
+    itemsToShow: 1,
+    snapAlign: 'center',
+  },
+  // 700px and up
+  700: {
+    itemsToShow: 2,
+    snapAlign: 'center',
+  },
+  // 1024 and up
+  1024: {
+    itemsToShow: 3,
+    snapAlign: 'start',
+  },
+};
+
 const breakpoints = {
   // 700px and up
   700: {
@@ -158,7 +175,7 @@ const breakpoints = {
                   </h3>
                 </div>
                 <Carousel :items-to-show="3" :wrap-around="true" :breakpoints="breakpointsCartoon">
-                  <Slide :key="slide">
+                  <Slide>
                     <div class="live">
                       <a href="" class="live__cover open-video">
                         <img
@@ -238,7 +255,7 @@ const breakpoints = {
             <h1 class="text-h4">Phim gợi ý</h1>
           </div>
           <Carousel :items-to-show="6" :wrap-around="true" :breakpoints="breakpoints">
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -277,7 +294,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -316,7 +333,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -355,7 +372,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -394,7 +411,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -433,7 +450,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -472,7 +489,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -511,7 +528,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide :key="slide">
+            <Slide>
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
