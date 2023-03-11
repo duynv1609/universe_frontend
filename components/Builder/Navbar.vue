@@ -86,7 +86,7 @@ const toggleOptions = (show?: boolean) => {
               <span class="sr-only">home</span>
               <span class="flex items-center">
                 <img
-                  src="~/assets/images/logo.png"
+                  src="/assets/images/logo.png"
                   class="inline-block mr-2 text-lg text-primary-500"
                 />
                 <!-- <IconLo:logo

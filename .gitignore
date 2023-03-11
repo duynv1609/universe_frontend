@@ -20,4 +20,4 @@ dist
 .original
 .pnpm-store
 pnpm-lock.yaml
-.env.development
+.DS_Store

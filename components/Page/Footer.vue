@@ -9,7 +9,7 @@ const { data: genreList } = useGetGenresList();
       <v-row>
         <div class="v-col-12 v-col-sm-8 v-col-md-6 v-col-lg-4 v-col-xl-3">
           <div class="footer__flixtv">
-            <img src="~/assets/images/logo.png" alt="" class="logo-footer" />
+            <img src="/assets/images/logo.png" alt="" class="logo-footer" />
           </div>
           <p class="footer__tagline pt-4">
             Vũ Trụ Phim, <br />
