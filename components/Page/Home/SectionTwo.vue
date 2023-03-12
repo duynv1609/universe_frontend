@@ -29,7 +29,7 @@ const breakpoints = {
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
         <Carousel :items-to-show="6" :wrap-around="true" :breakpoints="breakpoints">
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -68,7 +68,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -107,7 +107,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -146,7 +146,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -185,7 +185,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -224,7 +224,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -263,7 +263,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img
@@ -302,7 +302,7 @@ const breakpoints = {
               </ul>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="card">
               <a href="details.html" class="card__cover">
                 <img

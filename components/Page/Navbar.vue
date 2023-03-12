@@ -7,7 +7,7 @@ import {
   ListboxOption,
 } from '@headlessui/vue';
 import SignIcon from '@/assets/icons/live.svg';
-import DotIcon from '@/assets/icons/dot.svg';
+import DotIcon from '@/assets/icons/dot-white.svg';
 import { IThemeSettingOptions, availableThemes } from '~/utils/theme';
 export interface IMenuItem {
   type: 'link' | 'button';
@@ -33,17 +33,17 @@ const currentStyle = toRef(props, 'type');
 <template>
   <BuilderNavbar>
     <!-- <template #banner>
-      <div class="text-white text-xs text-center py-1 px-4 lg:px-8 bg-primary-500 capitalize">
-        <span class="mr-1">
-          {{ $t('banners.welcome', { app_name: app.name }) }}
-          <Anchor
-            class="underline font-bold"
-            :text="$t('others.learn_more')"
-            href="https://github.com/viandwi24/nuxt3-awesome-starter"
-          />
-        </span>
-      </div>
-    </template> -->
+        <div class="text-white text-xs text-center py-1 px-4 lg:px-8 bg-primary-500 capitalize">
+          <span class="mr-1">
+            {{ $t('banners.welcome', { app_name: app.name }) }}
+            <Anchor
+              class="underline font-bold"
+              :text="$t('others.learn_more')"
+              href="https://github.com/viandwi24/nuxt3-awesome-starter"
+            />
+          </span>
+        </div>
+      </template> -->
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <!-- Navbar -->
@@ -158,38 +158,38 @@ const currentStyle = toRef(props, 'type');
       </div>
     </template>
     <!-- <template #options="{ toggleOptions }">
-        <ActionSheet @onClose="toggleOptions(false)">
-          <ActionSheetBody>
-            <ActionSheetHeader text="Menu" />
-            <nav class="leading-6 font-semibold text-gray-600 dark:text-gray-300">
-              <ul class="flex flex-col">
-                <li v-for="(item, i) in menus" :key="i" class="flex w-full" :class="{
-                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':
-                    item.type === 'link',
-                }">
-                  <Anchor v-if="item.type === 'link'" :to="item.route ? item.route : undefined"
-                    :href="item.href ? item.href : undefined" class="flex-1 hover:no-underline capitalize">{{ item.text }}
-                  </Anchor>
-                  <Button v-else-if="item.type === 'button'" :text="item.text" size="xs"
-                    class="flex-1 font-extrabold capitalize" :to="item.route ? item.route : undefined"
-                    :href="item.href ? item.href : undefined" />
-                </li>
-              </ul>
-            </nav>
-            <div class="mt-6 text-sm font-bold capitalize">
-              {{ $t('components.theme_switcher.change_theme') }}
-            </div>
-            <div class="mt-2">
-              <ThemeSwitcher type="select-box" />
-            </div>
-            <div class="mt-6 text-sm font-bold capitalize">
-              {{ $t('components.language_switcher.change_language') }}
-            </div>
-            <div class="mt-2">
-              <LanguageSwitcher type="select-box" />
-            </div>
-          </ActionSheetBody>
-        </ActionSheet>
-      </template> -->
+          <ActionSheet @onClose="toggleOptions(false)">
+            <ActionSheetBody>
+              <ActionSheetHeader text="Menu" />
+              <nav class="leading-6 font-semibold text-gray-600 dark:text-gray-300">
+                <ul class="flex flex-col">
+                  <li v-for="(item, i) in menus" :key="i" class="flex w-full" :class="{
+                    'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':
+                      item.type === 'link',
+                  }">
+                    <Anchor v-if="item.type === 'link'" :to="item.route ? item.route : undefined"
+                      :href="item.href ? item.href : undefined" class="flex-1 hover:no-underline capitalize">{{ item.text }}
+                    </Anchor>
+                    <Button v-else-if="item.type === 'button'" :text="item.text" size="xs"
+                      class="flex-1 font-extrabold capitalize" :to="item.route ? item.route : undefined"
+                      :href="item.href ? item.href : undefined" />
+                  </li>
+                </ul>
+              </nav>
+              <div class="mt-6 text-sm font-bold capitalize">
+                {{ $t('components.theme_switcher.change_theme') }}
+              </div>
+              <div class="mt-2">
+                <ThemeSwitcher type="select-box" />
+              </div>
+              <div class="mt-6 text-sm font-bold capitalize">
+                {{ $t('components.language_switcher.change_language') }}
+              </div>
+              <div class="mt-2">
+                <LanguageSwitcher type="select-box" />
+              </div>
+            </ActionSheetBody>
+          </ActionSheet>
+        </template> -->
   </BuilderNavbar>
 </template>

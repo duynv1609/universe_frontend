@@ -175,7 +175,7 @@ const breakpoints = {
                   </h3>
                 </div>
                 <Carousel :items-to-show="3" :wrap-around="true" :breakpoints="breakpointsCartoon">
-                  <Slide>
+                  <Slide key="slide">
                     <div class="live">
                       <a href="" class="live__cover open-video">
                         <img
@@ -255,7 +255,7 @@ const breakpoints = {
             <h1 class="text-h4">Phim gợi ý</h1>
           </div>
           <Carousel :items-to-show="6" :wrap-around="true" :breakpoints="breakpoints">
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -294,7 +294,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -333,7 +333,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -372,7 +372,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -411,7 +411,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -450,7 +450,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -489,7 +489,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img
@@ -528,7 +528,7 @@ const breakpoints = {
                 </ul>
               </div>
             </Slide>
-            <Slide>
+            <Slide key="slide">
               <div class="card">
                 <a href="details.html" class="card__cover">
                   <img

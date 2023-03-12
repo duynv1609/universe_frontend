@@ -28,7 +28,7 @@ const breakpointsCartoon = {
           <v-btn class="bg-info" rounded="pill"> Xem thêm </v-btn>
         </div>
         <Carousel :items-to-show="3" :wrap-around="true" :breakpoints="breakpointsCartoon">
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img
@@ -65,7 +65,7 @@ const breakpointsCartoon = {
               </h3>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img
@@ -102,7 +102,7 @@ const breakpointsCartoon = {
               </h3>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img
@@ -139,7 +139,7 @@ const breakpointsCartoon = {
               </h3>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img
@@ -176,7 +176,7 @@ const breakpointsCartoon = {
               </h3>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img
@@ -213,7 +213,7 @@ const breakpointsCartoon = {
               </h3>
             </div>
           </Slide>
-          <Slide>
+          <Slide key="slide">
             <div class="live">
               <a href="" class="live__cover open-video">
                 <img

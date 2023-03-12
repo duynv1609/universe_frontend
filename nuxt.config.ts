@@ -1,6 +1,7 @@
 import IconsResolver from 'unplugin-icons/resolver';
 import UnpluginComponentsVite from 'unplugin-vue-components/vite';
 import vuetify from 'vite-plugin-vuetify';
+import svgLoader from 'vite-svg-loader';
 
 // declare module '@nuxt/schema' {
 //   interface NuxtConfig {
@@ -69,6 +70,7 @@ export default defineNuxtConfig({
           }),
         ],
       }),
+      svgLoader(),
     ],
   },
 
