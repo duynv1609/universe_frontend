@@ -1,63 +1,29 @@
 <script lang="ts" setup>
 import 'vue3-carousel/dist/carousel.css';
+const { data: listSection } = useGetListSection();
 
 // meta
 definePageMeta({
   layout: 'page',
 });
-
-// vars
-// const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'))
-// const leadingsText = computed(() => [
-//   {
-//     text: titlesText.value[0],
-//     startColor: '#007CF0',
-//     endColor: '#00DFD8',
-//     delay: 0,
-//   },
-//   {
-//     text: titlesText.value[1],
-//     startColor: '#7928CA',
-//     endColor: '#FF0080',
-//     delay: 2,
-//   },
-//   {
-//     text: titlesText.value[2],
-//     startColor: '#FF4D4D',
-//     endColor: '#F9CB28',
-//     delay: 4,
-//   },
-// ])
-// const tooltip = ref(false)
-
-// const
-// const cancelTooltip = () => {
-//   tooltip.value = false
-//   const tt = document.querySelector('.tooltiptext')
-//   if (tt) tt.innerHTML = `Copy to clipboard`
-// }
-// const copyBash = () => {
-//   const bash = 'git clone https://github.com/viandwi24/nuxt3-awesome-starter'
-//   navigator.clipboard.writeText(bash)
-//   tooltip.value = true
-//   const tt = document.querySelector('.tooltiptext')
-//   if (tt) tt.innerHTML = `Copied!!!`
-// }
+function getComponentName(type: string) {
+  const componentName = capitalize(type.replace(' ', '')).replace(/\s+/g, ' ');
+  return componentName;
+}
 </script>
 
 <template>
+  <!-- Banner Start-->
   <PageBanner />
-  <!-- phim chieu rap -->
-  <PageHomeSectionOne />
-  <!-- end phim chieu rap -->
+  <!-- Banner End -->
 
-  <!-- phim le -->
-  <PageHomeSectionTwo />
-  <!-- end phim le -->
+  <!-- Section Start -->
+  {{ getComponentName('con cac') }}
+  <div v-for="(item, i) in listSection?.data" :key="i">
+    <component :is="item.type"></component>
+  </div>
 
-  <!-- phim hoat hinh -->
-  <PageHomeSectionThree />
-  <!-- end phim hoat hinh -->
+  <!-- Section End -->
 </template>
 
 <style lang="scss">
@@ -120,6 +86,7 @@ definePageMeta({
   z-index: 0;
   padding-left: $padding;
   padding-right: $padding;
+
   &:before {
     content: var(--content);
     position: absolute;
@@ -134,6 +101,7 @@ definePageMeta({
     padding-right: $padding;
   }
 }
+
 .animated-text-fg {
   background-clip: text;
   -webkit-background-clip: text;
@@ -150,6 +118,7 @@ definePageMeta({
 html.dark {
   .animated-text-bg {
     color: theme('colors.gray.100');
+
     &:before {
       color: theme('colors.gray.100');
     }
