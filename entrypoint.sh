@@ -1,2 +1,2 @@
 #!/bin/bash
-pnpm install --shamefully-hoist && pnpm prepare && pnpm dev
+yarn install --shamefully-hoist && yarn prepare && yarn dev

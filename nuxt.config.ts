@@ -1,13 +1,12 @@
-import { IntlifyModuleOptions } from '@intlify/nuxt3';
-import UnpluginComponentsVite from 'unplugin-vue-components/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import UnpluginComponentsVite from 'unplugin-vue-components/vite';
 import vuetify from 'vite-plugin-vuetify';
 
-declare module '@nuxt/schema' {
-  interface NuxtConfig {
-    intlify?: IntlifyModuleOptions;
-  }
-}
+// declare module '@nuxt/schema' {
+//   interface NuxtConfig {
+//     intlify?: IntlifyModuleOptions;
+//   }
+// }
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -38,11 +37,10 @@ export default defineNuxtConfig({
 
   // modules
   modules: [
-    'nuxt-svgo',
+    // 'nuxt-svgo',
     'unplugin-icons/nuxt',
     '@intlify/nuxt3',
     '@pinia/nuxt',
-    '@nuxt/content',
     '@vueuse/nuxt',
     'nuxt-windicss',
     (_options, nuxt) => {
@@ -102,17 +100,6 @@ export default defineNuxtConfig({
       },
     },
     scan: true,
-  },
-
-  // content
-  content: {
-    documentDriven: true,
-    markdown: {
-      mdc: true,
-    },
-    highlight: {
-      theme: 'github-dark',
-    },
   },
 
   runtimeConfig: {

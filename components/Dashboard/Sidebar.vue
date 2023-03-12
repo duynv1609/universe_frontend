@@ -88,7 +88,7 @@ export default defineComponent({
       <v-list-item>
         <!-- sidebar logo -->
         <NuxtLink tag="a" class="sidebar__logo" to="/dashboard/catalog">
-          <img src="~/assets/images/logo.png" alt="Vu tru film" />
+          <img src="/assets/images/logo.png" alt="Vu tru film" />
         </NuxtLink>
         <!-- end sidebar logo -->
       </v-list-item>
@@ -96,7 +96,7 @@ export default defineComponent({
       <v-list-item>
         <div class="sidebar__user">
           <div class="sidebar__user-img">
-            <img src="~/assets/images/user.svg" alt="" />
+            <img src="/assets/images/user.svg" alt="" />
           </div>
 
           <div class="sidebar__user-title">

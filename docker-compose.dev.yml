@@ -10,7 +10,7 @@ services:
       - ./:/app
       - /app/node_modules
     ports:
-      - "3000:3000"
+      - "3039:3000"
     restart: unless-stopped
     command: /app/entrypoint.sh
     environment:

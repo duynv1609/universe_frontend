@@ -1,7 +1,8 @@
-import type { FetchError, FetchOptions } from 'ofetch';
+import type { FetchError } from 'ofetch';
 
 import type { AppResponse, NetworkResponse } from '~/models';
 
+type APIOptions<T> = Parameters<typeof $fetch<NetworkResponse<T>>>[1] | undefined;
 type Options = {
   canShowErrorMessage?: boolean;
   canShowSuccessMessage?: boolean;
@@ -16,7 +17,7 @@ export function useCallApi() {
   // const $session = typeof useSession === 'function' ? useSession() : undefined;
   // const $logger = typeof logger === 'function' ? logger : undefined;
 
-  function API<T>(url: string, opts?: FetchOptions | undefined) {
+  function API<T>(url: string, opts?: APIOptions<T>) {
     // $logger?.('log', `[call api]: ${url}`);
     // const token = $session?.data.value?.user.token.accessToken;
 

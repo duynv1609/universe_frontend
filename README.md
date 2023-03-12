@@ -10,12 +10,12 @@ Movie original theme: https://github.com/duynv1609/Movie-Theme-FlixGo
 ### Cach 1
 #### install dependencies
 ```
-npm install -g pnpm
-pnpm install --shamefully-hoist && pnpm prepare
+npm install -g yarn
+yarn && yarn prepare
 ```
 #### serve
 ```
-pnpm dev
+yarn dev
 ```
 ### Cach 2
 ```

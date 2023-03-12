@@ -5,6 +5,5 @@ RUN apk update && apk upgrade && apk --no-cache --virtual build-dependencies add
     make \
     g++
 COPY . .
-RUN npm install -g pnpm
 EXPOSE 3000
 ENTRYPOINT ["sh", "/app/entrypoint.sh"]
