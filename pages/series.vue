@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-import { useCounter } from '~/stores/counter';
-import { useIdentity } from '~/stores/identity';
-import { capitalize } from '~/utils/str';
-
 // composable
 const { t } = useLang();
 
@@ -11,83 +7,313 @@ definePageMeta({
   layout: 'page',
 });
 useHead(() => ({
-  title: capitalize(t('pages.series.title')),
+  title: capitalize(t('pages.category.title')),
   meta: [
     {
       name: 'description',
-      content: t('pages.series.description'),
+      content: t('pages.category.description'),
     },
   ],
 }));
-
-const counter = useCounter();
-const identity = useIdentity();
 </script>
 
 <template>
-  <PageWrapper>
-    <PageHeader>
-      <PageTitle :text="$t('pages.series.title')" class="capitalize" />
-    </PageHeader>
-    <PageBody>
-      <PageSection>
-        <PageSectionTitle :text="$t('pages.series.counter')" class="capitalize" />
-        <div class="">
-          <div class="mb-2">Counter : {{ counter.count }}</div>
-          <div
-            class="flex flex-col items-center justify-items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2"
-          >
-            <Button
-              class="w-full md:w-auto capitalize"
-              type="secondary"
-              size="sm"
-              :text="$t('pages.series.increment')"
-              @click.prevent="counter.increment"
-            />
-            <Button
-              class="w-full md:w-auto"
-              type="secondary"
-              size="sm"
-              :text="`${$t('pages.series.increment')} 2x`"
-              @click.prevent="counter.increment2x"
-            />
-            <Button
-              class="w-full md:w-auto capitalize"
-              type="secondary"
-              size="sm"
-              :text="$t('pages.series.decrement')"
-              @click.prevent="counter.decrement"
-            />
-            <Button
-              class="w-full md:w-auto capitalize"
-              type="secondary"
-              size="sm"
-              :text="$t('pages.series.reset')"
-              @click.prevent="counter.reset"
-            />
+  <!-- details -->
+  <section class="section section--gradient">
+    <div class="section__bg"></div>
+    <v-container>
+      <!-- article -->
+      <v-row>
+        <v-col cols="12">
+          <a class="article__trailer open-video"></a>
+          <!-- article content -->
+          <div class="article__content">
+            <h1>PHIM CỔ TRANG</h1>
+            <ul class="list">
+              <li>Trang chủ</li>
+              <li>Thể loại</li>
+              <li>Phim cổ trang</li>
+            </ul>
           </div>
-        </div>
-      </PageSection>
-      <PageSection>
-        <PageSectionTitle :text="$t('pages.series.identity')" class="capitalize" />
-        <div class="mb-2">
-          <span class="capitalize">{{ $t('pages.series.full_name') }} : </span>
-          <span>{{ identity.fullName }}</span>
-        </div>
-        <div class="mb-2">
-          <div class="flex flex-col items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2">
-            <FormTextInput v-model="identity.firstName" size="md" class="w-full md:w-1/3" />
-            <FormTextInput v-model="identity.lastName" size="md" class="w-full md:w-1/3" />
-            <Button
-              class="capitalize w-full md:w-auto"
-              :text="$t('pages.series.reset')"
-              type="secondary"
-              size="md"
-              @click.prevent="identity.reset"
+          <!-- end article content -->
+          <a class="article__trailer open-video"></a>
+        </v-col>
+      </v-row>
+      <!-- end article -->
+    </v-container>
+  </section>
+
+  <!-- end details -->
+  <v-container class="mt-10">
+    <v-row align="center">
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-select label="Phân loại" dense></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-select label="Tình trạng" dense></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-select label="Quốc gia" dense></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-select label="Năm" dense></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-select label="Thể loại" :dense="true" height="10"></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="2">
+        <v-btn class="bg-info w-100" rounded="pill"> Tìm kiếm </v-btn>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
             />
-          </div>
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
         </div>
-      </PageSection>
-    </PageBody>
-  </PageWrapper>
+      </v-col>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
+            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
+        </div>
+      </v-col>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
+            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
+        </div>
+      </v-col>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
+            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
+        </div>
+      </v-col>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
+            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
+        </div>
+      </v-col>
+      <v-col cols="2">
+        <div class="card">
+          <a href="details.html" class="card__cover">
+            <img
+              src="https://www.themoviedb.org/t/p/original/tkvqZp6b3NenFdoRDsM45Okm5jz.jpg"
+              alt=""
+            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="live__status">HD</span>
+          </a>
+          <span class="card__rating">36/36 Tập</span>
+          <h3 class="card__title card__title--subs">
+            <a href="details.html">Cẩm Tú Nam Ca</a>
+          </h3>
+          <ul class="card__list card__list--subs">
+            <li>The Song of Glory (2020)</li>
+          </ul>
+        </div>
+      </v-col>
+    </v-row>
+    <div class="text-center mt-15">
+      <v-pagination :length="4" rounded="circle"></v-pagination>
+    </div>
+  </v-container>
 </template>

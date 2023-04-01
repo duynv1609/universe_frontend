@@ -175,7 +175,7 @@ html.dark {
   right: 10px;
   z-index: 3;
   transition: 0.5s;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   height: 30px;
   width: auto;
@@ -1446,4 +1446,14 @@ html.dark {
   .header__content {
     padding: 0 30px;
   }
+}
+
+.home-title-custom {
+  margin: 0;
+  pointer-events: none;
+}
+
+.home-title-custom label {
+  font-size: 18px !important;
+  padding: 0 20px;
 }

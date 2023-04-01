@@ -6,10 +6,6 @@ const { data: listSection } = useGetListSection();
 definePageMeta({
   layout: 'page',
 });
-function getComponentName(type: string) {
-  const componentName = capitalize(type.replace(' ', '')).replace(/\s+/g, ' ');
-  return componentName;
-}
 </script>
 
 <template>
@@ -18,11 +14,11 @@ function getComponentName(type: string) {
   <!-- Banner End -->
 
   <!-- Section Start -->
-  {{ getComponentName('con cac') }}
   <div v-for="(item, i) in listSection?.data" :key="i">
-    <component :is="item.type"></component>
+    <PageHomeSectionOne v-if="item.type === 'SectionOne'" :name="item.name" :slug="item.slug" />
+    <PageHomeSectionTwo v-if="item.type === 'SectionTwo'" :name="item.name" :slug="item.slug" />
+    <PageHomeSectionThree v-if="item.type === 'SectionThree'" :name="series" :slug="item.slug" />
   </div>
-
   <!-- Section End -->
 </template>
 
