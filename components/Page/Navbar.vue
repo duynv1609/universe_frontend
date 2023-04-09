@@ -117,7 +117,10 @@ const currentStyle = toRef(props, 'type');
               <Anchor
                 v-if="item.slug !== 'genre' && item.slug !== 'nation'"
                 :link="false"
-                :to="item.slug !== 'genre' ? item.slug : 'genre'"
+                :to="{
+                  name: 'category-category_id',
+                  params: { category_id: item.slug },
+                }"
                 class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 uppercase"
               >
                 <span class="d-flex align-center ml-8">

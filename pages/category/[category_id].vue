@@ -30,7 +30,9 @@ useHead(() => ({
           <a class="article__trailer open-video"></a>
           <!-- article content -->
           <div class="article__content">
-            <h1>PHIM CỔ TRANGlll</h1>
+            <h1>PHIM CỔ TRANGjj</h1>
+            <p>{{ $route.params.group }} - {{ $route.params.id }} jj</p>
+
             <ul class="list">
               <li>Trang chủ</li>
               <li>Thể loại</li>
