@@ -6,9 +6,12 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue';
-import SignIcon from '@/assets/icons/live.svg';
-import DotIcon from '@/assets/icons/dot-white.svg';
+import { storeToRefs } from 'pinia';
+import LiveIcon from '~/assets/icons/live.svg';
+import DotIcon from '~/assets/icons/dot-white.svg';
 import { IThemeSettingOptions, availableThemes } from '~/utils/theme';
+import { useGenreStore } from '~/stores/genre';
+
 export interface IMenuItem {
   type: 'link' | 'button';
   text: string;
@@ -16,8 +19,8 @@ export interface IMenuItem {
   route?: any;
   has_icon?: boolean;
 }
-
-const { data: genreList } = useGetGenresList();
+const genreStore = useGenreStore();
+const { genres } = storeToRefs(genreStore);
 // state
 const themeSetting = useState<IThemeSettingOptions>('theme.setting');
 // micro compiler
@@ -52,7 +55,7 @@ const currentStyle = toRef(props, 'type');
           role="navigation"
         >
           <ul class="flex items-center space-x-8">
-            <li v-for="(item, i) in genreList?.data" :key="i">
+            <li v-for="(item, i) in genres" :key="i">
               <!-- dropdown -->
               <div v-if="item.slug === 'genre' || item.slug === 'nation'" class="flex items-center">
                 <Listbox
@@ -93,7 +96,7 @@ const currentStyle = toRef(props, 'type');
                       >
                         <span class="d-flex align-center">
                           {{ child.name }}
-                          <SignIcon v-if="child.slug === 'cinema' ? true : false" />
+                          <LiveIcon v-if="child.slug === 'cinema' ? true : false" />
                         </span>
                         <DotIcon
                           v-if="child.slug === 'genre' || child.slug === 'nation' ? true : false"
@@ -118,14 +121,14 @@ const currentStyle = toRef(props, 'type');
                 v-if="item.slug !== 'genre' && item.slug !== 'nation'"
                 :link="false"
                 :to="{
-                  name: 'category-category_id',
-                  params: { category_id: item.slug },
+                  name: 'genre-genre_id',
+                  params: { genre_id: item.slug },
                 }"
                 class="transition-colors duration-300 hover:no-underline hover:text-light-blue-darken-2 uppercase"
               >
                 <span class="d-flex align-center ml-8">
                   {{ item.name }}
-                  <SignIcon v-if="item.slug === 'cinema' ? true : false" />
+                  <LiveIcon v-if="item.slug === 'cinema' ? true : false" />
                 </span>
               </Anchor>
             </li>

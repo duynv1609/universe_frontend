@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import 'vue3-carousel/dist/carousel.css';
 const { data: listSection } = useGetListSection();
 
 // meta

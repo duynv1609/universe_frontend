@@ -12,6 +12,9 @@ import svgLoader from 'vite-svg-loader';
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // server side rendering mode
+  lodash: {
+    prefixSkip: false,
+  },
   ssr: true,
 
   // typescripts
@@ -26,6 +29,7 @@ export default defineNuxtConfig({
     '~/assets/sass/vuetify.min.scss', // to remove important attribute
     '~/assets/sass/vendor.scss',
     '~/assets/sass/app.scss',
+    'vue3-carousel/dist/carousel.css',
   ],
 
   // plugins
@@ -44,6 +48,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     'nuxt-windicss',
+    'nuxt-lodash',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         config.plugins?.push(vuetify());

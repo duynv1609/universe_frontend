@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import 'vue3-carousel/dist/carousel.css';
 // meta
 definePageMeta({
   layout: 'page',
@@ -38,7 +37,13 @@ const { data: listMovieType } = useGetListMovie({ query: `type=${props.slug}` })
             sm="4"
           >
             <div class="card">
-              <NuxtLink to="/detail" class="card__cover">
+              <NuxtLink
+                :to="{
+                  name: 'movie-movie_id',
+                  params: { movie_id: item.slug },
+                }"
+                class="card__cover"
+              >
                 <v-img :src="item.poster_image" aspect-ratio="16/9" :height="275" cover></v-img>
                 <svg
                   width="22"
